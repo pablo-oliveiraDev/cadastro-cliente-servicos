@@ -39,6 +39,10 @@ namespace FormCliente
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.BtnNovo = new System.Windows.Forms.Button();
             this.BtnCancel = new System.Windows.Forms.Button();
+            this.tagSolutions = new System.Windows.Forms.Button();
+            this.textId = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.BtnDeletar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,6 +111,7 @@ namespace FormCliente
             // btnCadastrar
             // 
             this.btnCadastrar.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.Location = new System.Drawing.Point(74, 180);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(141, 46);
@@ -118,6 +123,7 @@ namespace FormCliente
             // BtnNovo
             // 
             this.BtnNovo.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.BtnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnNovo.Location = new System.Drawing.Point(233, 180);
             this.BtnNovo.Name = "BtnNovo";
             this.BtnNovo.Size = new System.Drawing.Size(141, 46);
@@ -129,6 +135,7 @@ namespace FormCliente
             // BtnCancel
             // 
             this.BtnCancel.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancel.Location = new System.Drawing.Point(403, 180);
             this.BtnCancel.Name = "BtnCancel";
             this.BtnCancel.Size = new System.Drawing.Size(141, 46);
@@ -137,12 +144,57 @@ namespace FormCliente
             this.BtnCancel.UseVisualStyleBackColor = false;
             this.BtnCancel.Click += new System.EventHandler(this.BtncadCancel);
             // 
+            // tagSolutions
+            // 
+            this.tagSolutions.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tagSolutions.Cursor = System.Windows.Forms.Cursors.No;
+            this.tagSolutions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tagSolutions.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tagSolutions.Location = new System.Drawing.Point(484, 440);
+            this.tagSolutions.Name = "tagSolutions";
+            this.tagSolutions.Size = new System.Drawing.Size(288, 43);
+            this.tagSolutions.TabIndex = 10;
+            this.tagSolutions.Text = "Oliveira New Solutions";
+            this.tagSolutions.UseVisualStyleBackColor = false;
+            // 
+            // textId
+            // 
+            this.textId.Location = new System.Drawing.Point(107, 19);
+            this.textId.Name = "textId";
+            this.textId.Size = new System.Drawing.Size(82, 22);
+            this.textId.TabIndex = 12;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(72, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 17);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "ID :";
+            // 
+            // BtnDeletar
+            // 
+            this.BtnDeletar.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.BtnDeletar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDeletar.Location = new System.Drawing.Point(563, 179);
+            this.BtnDeletar.Name = "BtnDeletar";
+            this.BtnDeletar.Size = new System.Drawing.Size(141, 46);
+            this.BtnDeletar.TabIndex = 13;
+            this.BtnDeletar.Text = "&Deletar";
+            this.BtnDeletar.UseVisualStyleBackColor = false;
+            this.BtnDeletar.Click += new System.EventHandler(this.BtnDeletar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 485);
+            this.Controls.Add(this.BtnDeletar);
+            this.Controls.Add(this.textId);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.tagSolutions);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.BtnNovo);
             this.Controls.Add(this.btnCadastrar);
@@ -154,6 +206,7 @@ namespace FormCliente
             this.Controls.Add(this.TextNome);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliente";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -175,6 +228,10 @@ namespace FormCliente
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button BtnNovo;
         private System.Windows.Forms.Button BtnCancel;
+        private System.Windows.Forms.Button tagSolutions;
+        private System.Windows.Forms.TextBox textId;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button BtnDeletar;
     }
 }
 

@@ -9,12 +9,13 @@ using NpgsqlTypes;
 using Excepitions;
 using System.Data.Entity;
 
+
 namespace Entities
 {
     public class DataContext : DbContext
     {
-        
-        public DataContext() : base("DbManutInfor")
+
+        public DataContext() : base(nameOrConnectionString: "DbManutInfor")
         {
 
         }

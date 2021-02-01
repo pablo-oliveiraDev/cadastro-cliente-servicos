@@ -37,6 +37,7 @@ namespace FormClientes.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.BtnCancel = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
+            this.tagSolutions = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textDataEntrada
@@ -109,12 +110,26 @@ namespace FormClientes.Forms
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
+            // tagSolutions
+            // 
+            this.tagSolutions.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tagSolutions.Cursor = System.Windows.Forms.Cursors.No;
+            this.tagSolutions.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tagSolutions.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tagSolutions.Location = new System.Drawing.Point(199, 243);
+            this.tagSolutions.Name = "tagSolutions";
+            this.tagSolutions.Size = new System.Drawing.Size(288, 43);
+            this.tagSolutions.TabIndex = 16;
+            this.tagSolutions.Text = "Oliveira New Solutions";
+            this.tagSolutions.UseVisualStyleBackColor = false;
+            // 
             // NovoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(571, 288);
+            this.Controls.Add(this.tagSolutions);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.textDataEntrada);
@@ -141,5 +156,6 @@ namespace FormClientes.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnCancel;
         private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.Button tagSolutions;
     }
 }

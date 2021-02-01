@@ -88,6 +88,7 @@ namespace FormCliente
             {
                 select_row = e.RowIndex;
                 DataGridViewRow grv = dataGridViewCliente.Rows[select_row];
+                textId.Text = grv.Cells[0].Value.ToString();
                 TextNome.Text = grv.Cells[1].Value.ToString();
                 textEndereco.Text = grv.Cells[2].Value.ToString();
                 textDataEntrada.Text = grv.Cells[3].Value.ToString();
@@ -114,9 +115,7 @@ namespace FormCliente
 
         private void BtncadCancel(object sender, EventArgs e)
         {
-            //Form1 nform = new Form1();
-
-            // nform.Dispose();
+            
             this.Dispose();
         }
 
@@ -128,9 +127,18 @@ namespace FormCliente
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //Form1 nform = new Form1();
+            
+
 
             
+        }
+
+        private void BtnDeletar_Click(object sender, EventArgs e)
+        {
+            
+            Controls crtl = new Controls();
+            
+            crtl.DeletarBd(textId.SelectedText);
         }
     }
 }

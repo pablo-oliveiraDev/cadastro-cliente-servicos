@@ -258,6 +258,12 @@
     <Compile Include="Forms\NovoCliente.Designer.cs">
       <DependentUpon>NovoCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Servicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Servicos.Designer.cs">
+      <DependentUpon>Servicos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\FormCliente.resx">
@@ -265,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NovoCliente.resx">
       <DependentUpon>NovoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Servicos.resx">
+      <DependentUpon>Servicos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

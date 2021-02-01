@@ -13,6 +13,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 
 
+
 namespace Controles
 {
     public class Controls
@@ -56,24 +57,29 @@ namespace Controles
             conn.Close();
         }
 
-        public void DeletarBd(String id)
+        public void DeletarBd(string id)
         {
 
             NpgsqlConnection conn = new NpgsqlConnection("server=localhost;Port=5432;user id=admin; password=admin123;database=ManutInfor");
-            string sql = "DELETE FROM CLIENTE WHERE '"IdCliente"'=@Id";
 
-            NpgsqlCommand comm = new NpgsqlCommand(sql, conn);
 
+            NpgsqlCommand comm = new NpgsqlCommand();
+            comm.Connection = conn;
+            comm.CommandType = CommandType.Text;
+
+
+            comm.CommandText = "DELETE FROM public.cliente WHERE " + '"' + "IdCliente" + '"' + "=" + id + ";";
+
+            conn.Open();
+            MessageBox.Show(comm.CommandText);
             if (MessageBox.Show(" Deseja realmente excluir esse registro?", "Tem Certeza?", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-               
-                
 
-               
-                comm.Parameters.AddWithValue("@Id", id);
-                comm.CommandType = CommandType.Text;
-                conn.Open();
+
+
+
                 int i = comm.ExecuteNonQuery();
+
                 if (i > 0)
                 {
                     MessageBox.Show("Registro excluído com sucesso!");
@@ -83,10 +89,48 @@ namespace Controles
                     MessageBox.Show("erro!");
                 }
             }
-
+            //Form1 nfrm = new Form1();
+            //nfrm.;
             comm.Dispose();
             conn.Close();
 
+        }
+        public void UpdateBd(string id, string nome, string endereco, string dataEntrada)
+        {
+            NpgsqlConnection conn = new NpgsqlConnection("server=localhost;Port=5432;user id=admin; password=admin123;database=ManutInfor");
+
+            string sql = "UPDATE public.cliente SET nome=@Nome, endereco=@Endereco,dataEntradas = @dataEntradas WHERE "+'"'+"IdCliente"+'"'+"=@IdCliente";
+            
+            NpgsqlCommand comm = new NpgsqlCommand(sql, conn);
+            comm.Parameters.AddWithValue("@nome", nome);
+            comm.Parameters.AddWithValue("@endereco", endereco);
+            comm.Parameters.AddWithValue("@dataEntrada", dataEntrada);
+            comm.Parameters.AddWithValue("@IdCliente", id);
+            comm.CommandType = CommandType.Text;
+            conn.Open();
+
+            MessageBox.Show(comm.CommandText);
+            if (MessageBox.Show(" Deseja realmente excluir esse registro?", "Tem Certeza?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+
+
+
+
+                int i = comm.ExecuteNonQuery();
+
+                if (i > 0)
+                {
+                    MessageBox.Show("Registro excluído com sucesso!");
+                }
+                else
+                {
+                    MessageBox.Show("erro!");
+                }
+            }
+            //Form1 nfrm = new Form1();
+            //nfrm.;
+            comm.Dispose();
+            conn.Close();
         }
 
 

@@ -104,12 +104,11 @@ namespace FormCliente
         {
 
 
-
             NovoCliente cliform = new NovoCliente();
 
 
             cliform.ShowDialog();
-
+            
 
         }
 
@@ -122,7 +121,8 @@ namespace FormCliente
         private void BtnAtualizar(object sender, EventArgs e)
         {
             Controls ctrl = new Controls();
-            ctrl.SalvarTable(TextNome.Text, textEndereco.Text, textDataEntrada.Text);
+            ctrl.UpdateBd(textId.Text,TextNome.Text, textEndereco.Text, textDataEntrada.Text);
+            
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -137,8 +137,9 @@ namespace FormCliente
         {
             
             Controls crtl = new Controls();
-            
-            crtl.DeletarBd(textId.SelectedText);
+            //int convId = int.Parse(textId.Text);
+            crtl.DeletarBd(textId.Text);
+            refreshGrid();
         }
     }
 }

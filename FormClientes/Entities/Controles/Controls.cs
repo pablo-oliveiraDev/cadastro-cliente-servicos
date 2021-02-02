@@ -98,19 +98,18 @@ namespace Controles
         public void UpdateBd(string id, string nome, string endereco, string dataEntrada)
         {
             NpgsqlConnection conn = new NpgsqlConnection("server=localhost;Port=5432;user id=admin; password=admin123;database=ManutInfor");
+            NpgsqlCommand comm = new NpgsqlCommand();
+            comm.Connection = conn;
+            comm.CommandType = CommandType.Text;
 
-            string sql = "UPDATE public.cliente SET nome=@Nome, endereco=@Endereco,dataEntradas = @dataEntradas WHERE "+'"'+"IdCliente"+'"'+"=@IdCliente";
+            comm.CommandText = "UPDATE public.cliente SET  nome="+"'"+nome+"'"+",endereco="+ "'" + endereco + "'"+ ",dataEntradas=" + "'" + dataEntrada + "' WHERE " + '"'+"IdCliente"+'"'+"="+id+";";
             
-            NpgsqlCommand comm = new NpgsqlCommand(sql, conn);
-            comm.Parameters.AddWithValue("@nome", nome);
-            comm.Parameters.AddWithValue("@endereco", endereco);
-            comm.Parameters.AddWithValue("@dataEntrada", dataEntrada);
-            comm.Parameters.AddWithValue("@IdCliente", id);
+            
             comm.CommandType = CommandType.Text;
             conn.Open();
 
             MessageBox.Show(comm.CommandText);
-            if (MessageBox.Show(" Deseja realmente excluir esse registro?", "Tem Certeza?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show(" Deseja realmente Atualizar esse registro?", "Tem Certeza?", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
 
 
@@ -120,7 +119,7 @@ namespace Controles
 
                 if (i > 0)
                 {
-                    MessageBox.Show("Registro excluído com sucesso!");
+                    MessageBox.Show("Registro Atualizado com sucesso!");
                 }
                 else
                 {

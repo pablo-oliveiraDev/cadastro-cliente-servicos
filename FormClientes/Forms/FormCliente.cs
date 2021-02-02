@@ -122,7 +122,7 @@ namespace FormCliente
         {
             Controls ctrl = new Controls();
             ctrl.UpdateBd(textId.Text,TextNome.Text, textEndereco.Text, textDataEntrada.Text);
-            
+            refreshGrid();
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)

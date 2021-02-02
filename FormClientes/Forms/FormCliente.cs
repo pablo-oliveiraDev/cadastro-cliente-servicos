@@ -17,6 +17,7 @@ namespace FormCliente
     public partial class Form1 : Form
     {
         public Form1 FormCliente { get; set; }
+
         public Form1()
         {
             InitializeComponent();
@@ -26,23 +27,24 @@ namespace FormCliente
             NpgsqlCommand comm = new NpgsqlCommand();
             comm.Connection = conn;
             comm.CommandType = CommandType.Text;
-            comm.CommandText = "select * from cliente order by"+ '"'+"IdCliente"+'"';
+            comm.CommandText = "select * from cliente order by" + '"' + "IdCliente" + '"';
             NpgsqlDataReader dr = comm.ExecuteReader();
 
             if (dr.HasRows)
             {
+
+
                 DataTable dt = new DataTable();
                 dt.Load(dr);
                 dataGridViewCliente.DataSource = dt;
 
+
             }
 
 
-            comm.Dispose();
-            conn.Close();
-
-
         }
+
+
         public void refreshGrid()
         {
             NpgsqlConnection conn = new NpgsqlConnection("server=localhost;Port=5432;user id=admin; password=admin123;database=ManutInfor");
@@ -108,38 +110,49 @@ namespace FormCliente
 
 
             cliform.ShowDialog();
-            
+
 
         }
 
         private void BtncadCancel(object sender, EventArgs e)
         {
-            
+
             this.Dispose();
         }
 
         private void BtnAtualizar(object sender, EventArgs e)
         {
             Controls ctrl = new Controls();
-            ctrl.UpdateBd(textId.Text,TextNome.Text, textEndereco.Text, textDataEntrada.Text);
+            ctrl.UpdateBd(textId.Text, TextNome.Text, textEndereco.Text, textDataEntrada.Text);
             refreshGrid();
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
 
 
-            
+
+
         }
 
         private void BtnDeletar_Click(object sender, EventArgs e)
         {
-            
+
             Controls crtl = new Controls();
-            //int convId = int.Parse(textId.Text);
+
             crtl.DeletarBd(textId.Text);
             refreshGrid();
+        }
+
+        public void serviçosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FormServicos formsevices = new FormServicos();
+
+            Form1 formCliente = new Form1();
+            formsevices.Show();
+
+
         }
     }
 }

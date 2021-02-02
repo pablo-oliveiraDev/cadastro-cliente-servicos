@@ -102,9 +102,9 @@ namespace Controles
             comm.Connection = conn;
             comm.CommandType = CommandType.Text;
 
-            comm.CommandText = "UPDATE public.cliente SET  nome="+"'"+nome+"'"+",endereco="+ "'" + endereco + "'"+ ",dataEntradas=" + "'" + dataEntrada + "' WHERE " + '"'+"IdCliente"+'"'+"="+id+";";
-            
-            
+            comm.CommandText = "UPDATE public.cliente SET  nome=" + "'" + nome + "'" + ",endereco=" + "'" + endereco + "'" + ",dataEntradas=" + "'" + dataEntrada + "' WHERE " + '"' + "IdCliente" + '"' + "=" + id + ";";
+
+
             comm.CommandType = CommandType.Text;
             conn.Open();
 
@@ -132,11 +132,52 @@ namespace Controles
             conn.Close();
         }
 
+
         //Controles da tabela serviços
+
+        public void SalvarServ(string idCliente, string nameService, string equipamento, string pecasTrocadas, string executService, double valService, double valDesconto, string dataDoServico, Double valTotal, string defeito)
+        {
+
+            //idCliente = default;
+
+             DateTime dataValidate = DateTime.Parse(dataDoServico);
+            dataValidate = DateTime.Now;
+
+
+            NpgsqlConnection conn = new NpgsqlConnection("server=localhost;Port=5432;user id=admin; password=admin123;database=ManutInfor");
+
+
+            NpgsqlCommand comm = new NpgsqlCommand();
+            comm.Connection = conn;
+            comm.CommandType = CommandType.Text;
+            comm.CommandText = "INSERT INTO public.servicos( Id_cliente, NameService,Equipamento,PecasTrocadas, ExecutService,ValService,ValDesconto,DataDoServico,ValTotal,Defeito)" + "VALUES('" + idCliente + "','" + nameService + "','" + equipamento + "','" + pecasTrocadas + "','" + executService + "','" + valService + "','" + valDesconto + "','" + dataValidate.ToString("dd/MM/yyyy") + "','" + valTotal + "','" + defeito + "')";
+            conn.Open();
+
+            int i = comm.ExecuteNonQuery();
+            if (i > 0)
+            {
+
+                MessageBox.Show("inserido com sucesso!");
+
+            }
+            else
+            {
+                MessageBox.Show("erro!");
+            }
+
+
+            comm.Dispose();
+            conn.Close();
+        }
+
 
 
     }
+
+    
+
 }
+
 
 
 

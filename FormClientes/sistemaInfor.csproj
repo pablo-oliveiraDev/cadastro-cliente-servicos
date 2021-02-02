@@ -252,28 +252,37 @@
     <Compile Include="Forms\FormCliente.Designer.cs">
       <DependentUpon>FormCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CadServicos .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CadServicos .Designer.cs">
+      <DependentUpon>CadServicos .cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NovoCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\NovoCliente.Designer.cs">
       <DependentUpon>NovoCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Servicos.cs">
+    <Compile Include="Forms\FormServicos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Servicos.Designer.cs">
-      <DependentUpon>Servicos.cs</DependentUpon>
+    <Compile Include="Forms\FormServicos.Designer.cs">
+      <DependentUpon>FormServicos.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\FormCliente.resx">
       <DependentUpon>FormCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CadServicos .resx">
+      <DependentUpon>CadServicos .cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\NovoCliente.resx">
       <DependentUpon>NovoCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Servicos.resx">
-      <DependentUpon>Servicos.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormServicos.resx">
+      <DependentUpon>FormServicos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

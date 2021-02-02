@@ -26,7 +26,7 @@ namespace FormCliente
             NpgsqlCommand comm = new NpgsqlCommand();
             comm.Connection = conn;
             comm.CommandType = CommandType.Text;
-            comm.CommandText = "select * from cliente";
+            comm.CommandText = "select * from cliente order by"+ '"'+"IdCliente"+'"';
             NpgsqlDataReader dr = comm.ExecuteReader();
 
             if (dr.HasRows)
@@ -49,7 +49,7 @@ namespace FormCliente
 
             conn.Open();
 
-            NpgsqlDataAdapter da = new NpgsqlDataAdapter("select * from cliente", conn);
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter("select * from cliente order by" + '"' + "IdCliente" + '"', conn);
             DataSet ds = new DataSet();
             da.Fill(ds, "cliente");
             dataGridViewCliente.DataSource = ds;

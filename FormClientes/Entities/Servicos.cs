@@ -48,13 +48,13 @@ namespace Entities
         }
 
 
-        public void NumberCliente(string TextIdCliente)
+       /* public void NumberCliente(string TextIdCliente)
         {
             int text = int.Parse(TextIdCliente);
             DataContext dataContext = new DataContext();
             dataContext.servicos.ToList().ForEach(x => x.IdCliente = text);
 
-        }
+        }*/
         public double ValorTotal()
         {
             return ValorDoServico -= ValorDoServico * (Desconto / 100);

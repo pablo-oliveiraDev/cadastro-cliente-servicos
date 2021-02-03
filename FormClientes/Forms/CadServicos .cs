@@ -33,7 +33,7 @@ namespace FormClientes.Forms
             NpgsqlCommand comm = new NpgsqlCommand();
             comm.Connection = conn;
             comm.CommandType = CommandType.Text;
-            comm.CommandText = "select" + '"' + "IdCliente" + '"' + " From cliente";
+            comm.CommandText = "select * from cliente order by" + '"' + "IdCliente" + '"';
             NpgsqlDataReader dr = comm.ExecuteReader();
 
 
@@ -44,7 +44,8 @@ namespace FormClientes.Forms
             dt.Load(dr);
             comboBox1.DisplayMember = "IdCliente";
             comboBox1.DataSource = dt;
-           
+            conn.Close();
+            
         }
 
         
@@ -65,11 +66,11 @@ namespace FormClientes.Forms
         private void BtnNovo_Click(object sender, EventArgs e)
         {
             Controls ctrl = new Controls();
-            
-            double converValor = double.Parse(textValor.Text);
-            double converDesconto = double.Parse(textDesconto.Text);
-            double converValorTotal = double.Parse(textValorTotal.Text);
-            ctrl.SalvarServ(comboBox1.SelectedItem.ToString(),textNameService.Text,textEquip.Text,textPecas.Text,textServices.Text,converValor,converDesconto,textDataService.Text,converValorTotal,textDefeitos.Text);
+                       
+            ctrl.SalvarServ(comboBox1.Text,textNameService.Text,textEquip.Text,textPecas.Text,textServices.Text,textValor.Text,textDesconto.Text,textDataService.Text,textValor.Text,textDefeitos.Text);
+            ctrl.limparText();
+            FormServicos frm = new FormServicos();
+            frm.refreshGrid();
         }
 
         private void bntCancelar_Click(object sender, EventArgs e)

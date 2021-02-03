@@ -126,8 +126,7 @@ namespace Controles
                     MessageBox.Show("erro!");
                 }
             }
-            //Form1 nfrm = new Form1();
-            //nfrm.;
+
             comm.Dispose();
             conn.Close();
         }
@@ -135,24 +134,42 @@ namespace Controles
 
         //Controles da tabela serviços
 
-        public void SalvarServ(string idCliente, string nameService, string equipamento, string pecasTrocadas, string executService, double valService, double valDesconto, string dataDoServico, Double valTotal, string defeito)
+        public void SalvarServ(string idCliente, string nameService, string equipamento, string pecasTrocadas, string executService, string valService, string valDesconto, string dataDoServico, string valTotal, string defeito)
         {
 
             //idCliente = default;
 
-             DateTime dataValidate = DateTime.Parse(dataDoServico);
-            dataValidate = DateTime.Now;
-
+            DateTime dataValidate = DateTime.Now;
+            int converid = int.Parse(idCliente);
+            double converValor = double.Parse(valService);
+            double converDesconto = double.Parse(valDesconto);
+            double converValorTotal = double.Parse(valTotal);
 
             NpgsqlConnection conn = new NpgsqlConnection("server=localhost;Port=5432;user id=admin; password=admin123;database=ManutInfor");
+            string sql = "INSERT INTO public.servicos(id_cliente, nameservice,equipamento,pecastrocadas, executservice,valservice,valdesconto,datadoservico,valtotal,defeito)" + "VALUES(@id_cliente,@nameservice,@equipamento,@pecasTrocadas,@executService,@valservices,@valdesconto,@datadoservico,@valTotal,@defeito )";
+
+            NpgsqlCommand comm = new NpgsqlCommand(sql, conn);
 
 
-            NpgsqlCommand comm = new NpgsqlCommand();
-            comm.Connection = conn;
+            //comm.Connection = conn;
             comm.CommandType = CommandType.Text;
-            comm.CommandText = "INSERT INTO public.servicos( Id_cliente, NameService,Equipamento,PecasTrocadas, ExecutService,ValService,ValDesconto,DataDoServico,ValTotal,Defeito)" + "VALUES('" + idCliente + "','" + nameService + "','" + equipamento + "','" + pecasTrocadas + "','" + executService + "','" + valService + "','" + valDesconto + "','" + dataValidate.ToString("dd/MM/yyyy") + "','" + valTotal + "','" + defeito + "')";
+            comm.Parameters.AddWithValue("@id_cliente", converid);
+            comm.Parameters.AddWithValue("@nameservice", nameService);
+            comm.Parameters.AddWithValue("@equipamento", equipamento);
+            comm.Parameters.AddWithValue("@pecastrocadas", pecasTrocadas);
+            comm.Parameters.AddWithValue("@executservice", executService);
+            comm.Parameters.AddWithValue("@valservices", "" + converValor.ToString("F2") + "");
+            comm.Parameters.AddWithValue("@valdesconto", converDesconto.ToString("F2"));
+            comm.Parameters.AddWithValue("@datadoservico", dataValidate.ToString("dd/MM/yyyy"));
+            comm.Parameters.AddWithValue("@valtotal", converValorTotal.ToString("F2"));
+            comm.Parameters.AddWithValue("@defeito", defeito);
             conn.Open();
 
+            //comm.CommandText = "INSERT INTO public.servicos(id_cliente, nameservice,equipamento,pecastrocadas, executservice,valservice,valdesconto,datadoservico,valtotal,defeito)" + "VALUES('" + idCliente + "','" + nameService + "','" + equipamento + "','" + pecasTrocadas + "','" + executService + "','" + converValor.ToString("f2") + "','" + converDesconto.ToString("f2") + "','" + dataValidate.ToString("dd/MM/yyyy") + "','" + converValorTotal.ToString("f2") + "','" + defeito + "')";
+
+
+            //MessageBox.Show(comm.Prepare());
+            comm.Prepare();
             int i = comm.ExecuteNonQuery();
             if (i > 0)
             {
@@ -171,10 +188,17 @@ namespace Controles
         }
 
 
+        public void limparText()
+        {
+            TextBox box = new TextBox();
+            box.ResetText();
+           
+            
+        }
 
     }
 
-    
+
 
 }
 

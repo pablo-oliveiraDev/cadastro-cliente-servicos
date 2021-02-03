@@ -24,7 +24,7 @@ namespace FormClientes.Forms
             NpgsqlCommand comm = new NpgsqlCommand();
             comm.Connection = conn;
             comm.CommandType = CommandType.Text;
-            comm.CommandText = "select * from servicos order by" + '"' + "Id_Cliente" + '"';
+            comm.CommandText = "select * from servicos order by" + '"' + "id_cliente" + '"';
             NpgsqlDataReader dr = comm.ExecuteReader();
 
             if (dr.HasRows)
@@ -33,7 +33,7 @@ namespace FormClientes.Forms
                 DataTable dt = new DataTable();
                 dt.Load(dr);
                 dataGridViewServicos.DataSource = dt;
-                comboBox1.DataSource = dt;
+                //comboBox1.DataSource = dt;
 
                
                 
@@ -41,6 +41,19 @@ namespace FormClientes.Forms
 
             
 
+        }
+        public void refreshGrid()
+        {
+            NpgsqlConnection conn = new NpgsqlConnection("server=localhost;Port=5432;user id=admin; password=admin123;database=ManutInfor");
+
+            conn.Open();
+
+            NpgsqlDataAdapter da = new NpgsqlDataAdapter("select * from servicos order by" + '"' + "id_servicos" + '"', conn);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "servicos");
+            dataGridViewServicos.DataSource = ds;
+            dataGridViewServicos.DataMember = "servicos";
+            conn.Close();
         }
 
         private void Servicos_Load(object sender, EventArgs e)
@@ -52,10 +65,10 @@ namespace FormClientes.Forms
             NpgsqlCommand comm = new NpgsqlCommand();
             comm.Connection = conn;
             comm.CommandType = CommandType.Text;
-            comm.CommandText = "select" + '"' + "IdCliente" + '"' + " From cliente";
+            comm.CommandText = "select * from cliente order by"+'"' + "IdCliente" + '"';
             NpgsqlDataReader dr = comm.ExecuteReader();
 
-
+            //"select" + '"' + "IdCliente" + '"' + " From cliente"
 
 
 

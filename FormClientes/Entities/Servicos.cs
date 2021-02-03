@@ -11,20 +11,20 @@ namespace Entities
     [Table("servicos", Schema = "public")]
     public class Servicos : Cliente
     {
-
-        public int IdServicos { get; set; }
-        public string NameServico { get; set; }
-        public string Equipamento { get; set; }
-        public string PecasTrocadas { get; set; }
-        public string SevicosExecutados { get; set; }
-        public double ValorDoServico { get; set; }
-        public double Desconto { get; set; }
+        public int id_cliente { get; set; }
+        public int id_servicos { get; set; }
+        public string nameservice { get; set; }
+        public string equipamento { get; set; }
+        public string pecastrocadas { get; set; }
+        public string executservices { get; set; }
+        public double valservice { get; set; }
+        public double desconto { get; set; }
         public Cliente cliente { get; set; }
-
+        public string defeito { get; set; }
 
         public DateTime DataServico { get; set; }
         public double ValTotal { get; private set; }
-       
+        
 
         public Servicos()
         {
@@ -32,18 +32,19 @@ namespace Entities
         }
 
 
-        public Servicos(int idCliente, string name, string endereco, DateTime dataEntrada, int idServicos, string nameServico, string equipamento, string pecasTrocadas,
+        public Servicos(int idCliente, string name, string endereco, DateTime dataEntrada, int idServicos, string nameServico, string equipamentos, string pecasTrocadas,
             string sevicosExecutados,
-            double valorDoServico, double desconto, DateTime dataServico) : base(idCliente, name, endereco, dataEntrada)
+            double valorDoServico, double descontos, DateTime dataServico,string defeitos) : base(idCliente, name, endereco, dataEntrada)
         {
-            IdServicos = idServicos;
-            NameServico = nameServico;
-            Equipamento = equipamento;
-            PecasTrocadas = pecasTrocadas;
-            SevicosExecutados = sevicosExecutados;
-            ValorDoServico = valorDoServico;
-            Desconto = desconto;
+            id_servicos = idServicos;
+            nameservice = nameServico;
+            equipamento = equipamentos;
+            pecastrocadas = pecasTrocadas;
+            executservices = sevicosExecutados;
+            valservice = valorDoServico;
+            desconto = descontos;
             DataServico = dataServico;
+            defeito = defeitos;
            
         }
 
@@ -57,7 +58,7 @@ namespace Entities
         }*/
         public double ValorTotal()
         {
-            return ValorDoServico -= ValorDoServico * (Desconto / 100);
+            return valservice -= valservice * (desconto / 100);
         }
     }
 }

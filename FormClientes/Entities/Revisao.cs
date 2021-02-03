@@ -27,8 +27,8 @@ namespace Entities
         }
         public Revisao(int idCliente, string name, string endereco, DateTime dataEntrada, int idServicos, string nameServico, string equipamento, string pecasTrocadas,
             string sevicosExecutados,
-            double valorDoServico, double desconto, DateTime dataServico, int idRevisao, DateTime dataRevisao) : base(idCliente, name, endereco, dataEntrada,
-            idServicos,nameServico,equipamento,pecasTrocadas,sevicosExecutados,valorDoServico,desconto,dataServico)
+            double valorDoServico, double desconto, DateTime dataServico,string defeitos, int idRevisao, DateTime dataRevisao) : base(idCliente, name, endereco, dataEntrada,
+            idServicos,nameServico,equipamento,pecasTrocadas,sevicosExecutados,valorDoServico,desconto,dataServico,defeitos)
         {
             IdRevisao = idRevisao;
             DataRevisao = dataRevisao;

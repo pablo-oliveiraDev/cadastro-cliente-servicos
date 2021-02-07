@@ -59,23 +59,7 @@ namespace FormClientes.Forms
         private void Servicos_Load(object sender, EventArgs e)
         {
 
-            NpgsqlConnection conn = new NpgsqlConnection("server=localhost;Port=5432;user id=admin; password=admin123;database=ManutInfor");
-
-            conn.Open();
-            NpgsqlCommand comm = new NpgsqlCommand();
-            comm.Connection = conn;
-            comm.CommandType = CommandType.Text;
-            comm.CommandText = "select * from cliente order by"+'"' + "IdCliente" + '"';
-            NpgsqlDataReader dr = comm.ExecuteReader();
-
-            //"select" + '"' + "IdCliente" + '"' + " From cliente"
-
-
-
-            DataTable dt = new DataTable();
-            dt.Load(dr);
-            comboBox1.DisplayMember = "IdCliente";
-            comboBox1.DataSource = dt;
+            
            
         }
 
@@ -83,21 +67,64 @@ namespace FormClientes.Forms
 
         private void dataGridViewServicos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int select_row;
+
+
+            if (e.RowIndex >= 0)
+            {
+                select_row = e.RowIndex;
+                DataGridViewRow grv = dataGridViewServicos.Rows[select_row];
+                textidcliente.Text= grv.Cells[0].Value.ToString();
+                textIdServico.Text = grv.Cells[1].Value.ToString();
+                textNameService.Text= grv.Cells[2].Value.ToString();
+                textEquip.Text= grv.Cells[3].Value.ToString();
+                textPecas.Text  = grv.Cells[4].Value.ToString();
+                textServices.Text = grv.Cells[5].Value.ToString();
+                textValor.Text = grv.Cells[6].Value.ToString();
+                textDesconto.Text = grv.Cells[7].Value.ToString();
+                textDataService.Text = grv.Cells[8].Value.ToString();
+                textValorTotal.Text = grv.Cells[9].Value.ToString();
+                textDefeitos.Text = grv.Cells[10].Value.ToString();
+
+            }
+
+            else
+            {
+
+            }
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-
-
-            
-        }
+       
 
         private void BtnNovo_Click(object sender, EventArgs e)
         {
             CadServicos frm = new CadServicos();
             frm.ShowDialog();
+            refreshGrid();
+        }
+
+        private void btnAtualizar_click(object sender, EventArgs e)
+        {
+            Controls crtl = new Controls();
+            crtl.SalvarUpSelectSevices(2, textidcliente.Text, textIdServico.Text,textNameService.Text, textEquip.Text, textPecas.Text,textServices.Text, textValor.Text, textDesconto.Text, textDataService.Text, textValor.Text, textDefeitos.Text);
+            refreshGrid();
+            
+
+            
+        }
+
+        private void btnDeletar_Click(object sender, EventArgs e)
+        {
+            Controls crtl = new Controls();
+            crtl.SalvarUpSelectSevices(3, textidcliente.Text, textIdServico.Text, textNameService.Text, textEquip.Text, textPecas.Text, textServices.Text, textValor.Text, textDesconto.Text, textDataService.Text, textValor.Text, textDefeitos.Text);
+            refreshGrid();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            FormServicos frm = new FormServicos();
+            this.Dispose();
         }
     }
 }

@@ -165,6 +165,7 @@ namespace FormCliente
             // 
             // textId
             // 
+            this.textId.Enabled = false;
             this.textId.Location = new System.Drawing.Point(107, 38);
             this.textId.Name = "textId";
             this.textId.Size = new System.Drawing.Size(82, 22);

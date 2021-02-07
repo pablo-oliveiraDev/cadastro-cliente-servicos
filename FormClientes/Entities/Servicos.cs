@@ -24,7 +24,7 @@ namespace Entities
 
         public DateTime DataServico { get; set; }
         public double ValTotal { get; private set; }
-        
+
 
         public Servicos()
         {
@@ -34,7 +34,7 @@ namespace Entities
 
         public Servicos(int idCliente, string name, string endereco, DateTime dataEntrada, int idServicos, string nameServico, string equipamentos, string pecasTrocadas,
             string sevicosExecutados,
-            double valorDoServico, double descontos, DateTime dataServico,string defeitos) : base(idCliente, name, endereco, dataEntrada)
+            double valorDoServico, double descontos, DateTime dataServico, string defeitos) : base(idCliente, name, endereco, dataEntrada)
         {
             id_servicos = idServicos;
             nameservice = nameServico;
@@ -45,19 +45,24 @@ namespace Entities
             desconto = descontos;
             DataServico = dataServico;
             defeito = defeitos;
-           
+
+        }
+        public Servicos(double desconto, double valservice)
+        {
+
         }
 
 
-       /* public void NumberCliente(string TextIdCliente)
-        {
-            int text = int.Parse(TextIdCliente);
-            DataContext dataContext = new DataContext();
-            dataContext.servicos.ToList().ForEach(x => x.IdCliente = text);
+        /* public void NumberCliente(string TextIdCliente)
+         {
+             int text = int.Parse(TextIdCliente);
+             DataContext dataContext = new DataContext();
+             dataContext.servicos.ToList().ForEach(x => x.IdCliente = text);
 
-        }*/
-        public double ValorTotal()
+         }*/
+        public double ValorTotal(double desconto,double valservice)
         {
+
             return valservice -= valservice * (desconto / 100);
         }
     }

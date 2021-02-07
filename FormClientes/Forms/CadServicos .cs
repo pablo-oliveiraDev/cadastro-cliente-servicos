@@ -27,6 +27,7 @@ namespace FormClientes.Forms
         private void Servicos_Load(object sender, EventArgs e)
         {
 
+           
             NpgsqlConnection conn = new NpgsqlConnection("server=localhost;Port=5432;user id=admin; password=admin123;database=ManutInfor");
 
             conn.Open();
@@ -65,9 +66,10 @@ namespace FormClientes.Forms
 
         private void BtnNovo_Click(object sender, EventArgs e)
         {
+           
             Controls ctrl = new Controls();
                        
-            ctrl.SalvarServ(comboBox1.Text,textNameService.Text,textEquip.Text,textPecas.Text,textServices.Text,textValor.Text,textDesconto.Text,textDataService.Text,textValor.Text,textDefeitos.Text);
+            ctrl.SalvarUpSelectSevices(1,comboBox1.Text,default,textNameService.Text,textEquip.Text,textPecas.Text,textServices.Text,textValor.Text,textDesconto.Text,textDataService.Text,textValor.Text,textDefeitos.Text);
             ctrl.limparText();
             FormServicos frm = new FormServicos();
             frm.refreshGrid();
@@ -76,6 +78,36 @@ namespace FormClientes.Forms
         private void bntCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

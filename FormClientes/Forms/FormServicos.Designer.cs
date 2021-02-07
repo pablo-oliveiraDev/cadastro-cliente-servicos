@@ -51,7 +51,12 @@ namespace FormClientes.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridViewServicos = new System.Windows.Forms.DataGridView();
             this.BtnNovo = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textidcliente = new System.Windows.Forms.TextBox();
+            this.textNameService = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btnAtualizar = new System.Windows.Forms.Button();
+            this.btnDeletar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewServicos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,6 +75,7 @@ namespace FormClientes.Forms
             // 
             // textIdServico
             // 
+            this.textIdServico.Enabled = false;
             this.textIdServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.textIdServico.Location = new System.Drawing.Point(125, 58);
             this.textIdServico.Name = "textIdServico";
@@ -79,13 +85,14 @@ namespace FormClientes.Forms
             // textEquip
             // 
             this.textEquip.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textEquip.Location = new System.Drawing.Point(125, 135);
+            this.textEquip.Location = new System.Drawing.Point(669, 5);
             this.textEquip.Name = "textEquip";
             this.textEquip.Size = new System.Drawing.Size(414, 30);
             this.textEquip.TabIndex = 14;
             // 
             // textDataService
             // 
+            this.textDataService.Enabled = false;
             this.textDataService.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.textDataService.Location = new System.Drawing.Point(125, 99);
             this.textDataService.Name = "textDataService";
@@ -95,7 +102,7 @@ namespace FormClientes.Forms
             // textDefeitos
             // 
             this.textDefeitos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textDefeitos.Location = new System.Drawing.Point(669, 6);
+            this.textDefeitos.Location = new System.Drawing.Point(669, 141);
             this.textDefeitos.Name = "textDefeitos";
             this.textDefeitos.Size = new System.Drawing.Size(414, 30);
             this.textDefeitos.TabIndex = 16;
@@ -103,7 +110,7 @@ namespace FormClientes.Forms
             // textPecas
             // 
             this.textPecas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textPecas.Location = new System.Drawing.Point(669, 54);
+            this.textPecas.Location = new System.Drawing.Point(669, 50);
             this.textPecas.Name = "textPecas";
             this.textPecas.Size = new System.Drawing.Size(414, 30);
             this.textPecas.TabIndex = 17;
@@ -111,7 +118,7 @@ namespace FormClientes.Forms
             // textServices
             // 
             this.textServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textServices.Location = new System.Drawing.Point(669, 101);
+            this.textServices.Location = new System.Drawing.Point(669, 95);
             this.textServices.Name = "textServices";
             this.textServices.Size = new System.Drawing.Size(414, 30);
             this.textServices.TabIndex = 18;
@@ -128,7 +135,7 @@ namespace FormClientes.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 11);
+            this.label1.Location = new System.Drawing.Point(25, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 20);
             this.label1.TabIndex = 22;
@@ -148,7 +155,7 @@ namespace FormClientes.Forms
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(582, 107);
+            this.label5.Location = new System.Drawing.Point(582, 101);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 20);
             this.label5.TabIndex = 26;
@@ -168,7 +175,7 @@ namespace FormClientes.Forms
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(597, 59);
+            this.label7.Location = new System.Drawing.Point(597, 55);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 20);
             this.label7.TabIndex = 28;
@@ -178,7 +185,7 @@ namespace FormClientes.Forms
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(578, 13);
+            this.label8.Location = new System.Drawing.Point(578, 148);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(92, 20);
             this.label8.TabIndex = 29;
@@ -188,7 +195,7 @@ namespace FormClientes.Forms
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(-3, 142);
+            this.label9.Location = new System.Drawing.Point(541, 12);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(129, 20);
             this.label9.TabIndex = 30;
@@ -206,6 +213,7 @@ namespace FormClientes.Forms
             // 
             // textValorTotal
             // 
+            this.textValorTotal.Enabled = false;
             this.textValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.textValorTotal.Location = new System.Drawing.Point(380, 95);
             this.textValorTotal.Name = "textValorTotal";
@@ -245,12 +253,12 @@ namespace FormClientes.Forms
             this.dataGridViewServicos.AllowUserToAddRows = false;
             this.dataGridViewServicos.AllowUserToDeleteRows = false;
             this.dataGridViewServicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewServicos.Location = new System.Drawing.Point(25, 186);
+            this.dataGridViewServicos.Location = new System.Drawing.Point(25, 246);
             this.dataGridViewServicos.Name = "dataGridViewServicos";
             this.dataGridViewServicos.ReadOnly = true;
             this.dataGridViewServicos.RowHeadersWidth = 51;
             this.dataGridViewServicos.RowTemplate.Height = 24;
-            this.dataGridViewServicos.Size = new System.Drawing.Size(1163, 308);
+            this.dataGridViewServicos.Size = new System.Drawing.Size(1163, 248);
             this.dataGridViewServicos.TabIndex = 36;
             this.dataGridViewServicos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewServicos_CellContentClick);
             // 
@@ -258,7 +266,7 @@ namespace FormClientes.Forms
             // 
             this.BtnNovo.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BtnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNovo.Location = new System.Drawing.Point(545, 136);
+            this.BtnNovo.Location = new System.Drawing.Point(125, 194);
             this.BtnNovo.Name = "BtnNovo";
             this.BtnNovo.Size = new System.Drawing.Size(141, 46);
             this.BtnNovo.TabIndex = 37;
@@ -266,15 +274,67 @@ namespace FormClientes.Forms
             this.BtnNovo.UseVisualStyleBackColor = false;
             this.BtnNovo.Click += new System.EventHandler(this.BtnNovo_Click);
             // 
-            // comboBox1
+            // textidcliente
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(125, 10);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
-            this.comboBox1.TabIndex = 38;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.textidcliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textidcliente.Location = new System.Drawing.Point(125, 13);
+            this.textidcliente.Name = "textidcliente";
+            this.textidcliente.Size = new System.Drawing.Size(126, 30);
+            this.textidcliente.TabIndex = 38;
+            // 
+            // textNameService
+            // 
+            this.textNameService.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textNameService.Location = new System.Drawing.Point(126, 141);
+            this.textNameService.Name = "textNameService";
+            this.textNameService.Size = new System.Drawing.Size(414, 30);
+            this.textNameService.TabIndex = 39;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(8, 148);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(118, 20);
+            this.label11.TabIndex = 40;
+            this.label11.Text = "Nome Serv. :";
+            // 
+            // btnAtualizar
+            // 
+            this.btnAtualizar.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtualizar.Location = new System.Drawing.Point(325, 194);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(141, 46);
+            this.btnAtualizar.TabIndex = 41;
+            this.btnAtualizar.Text = "&Atualizar";
+            this.btnAtualizar.UseVisualStyleBackColor = false;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_click);
+            // 
+            // btnDeletar
+            // 
+            this.btnDeletar.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnDeletar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletar.Location = new System.Drawing.Point(525, 194);
+            this.btnDeletar.Name = "btnDeletar";
+            this.btnDeletar.Size = new System.Drawing.Size(141, 46);
+            this.btnDeletar.TabIndex = 42;
+            this.btnDeletar.Text = "&Deletar";
+            this.btnDeletar.UseVisualStyleBackColor = false;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(725, 194);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(141, 46);
+            this.btnCancelar.TabIndex = 43;
+            this.btnCancelar.Text = "&Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // FormServicos
             // 
@@ -282,7 +342,12 @@ namespace FormClientes.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1200, 552);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnDeletar);
+            this.Controls.Add(this.btnAtualizar);
+            this.Controls.Add(this.textNameService);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.textidcliente);
             this.Controls.Add(this.BtnNovo);
             this.Controls.Add(this.dataGridViewServicos);
             this.Controls.Add(this.textDesconto);
@@ -338,6 +403,11 @@ namespace FormClientes.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridViewServicos;
         private System.Windows.Forms.Button BtnNovo;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textidcliente;
+        private System.Windows.Forms.TextBox textNameService;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnAtualizar;
+        private System.Windows.Forms.Button btnDeletar;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

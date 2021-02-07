@@ -10,6 +10,7 @@ using FormCliente;
 using Entities;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations.Schema;
+using FormClientes.Forms;
 
 
 
@@ -134,9 +135,13 @@ namespace Controles
 
         //Controles da tabela serviços
 
-        public void SalvarServ(string idCliente, string nameService, string equipamento, string pecasTrocadas, string executService, string valService, string valDesconto, string dataDoServico, string valTotal, string defeito)
+        public void SalvarUpSelectSevices(int code,string idCliente,string id_servicos, string nameService, string equipamento, string pecasTrocadas, string executService, string valService, string valDesconto, string dataDoServico, string valTotal, string defeito)
         {
 
+            Servicos serv = new Servicos();
+
+
+            //1==salvar //2==update //3 ==select//
             //idCliente = default;
 
             DateTime dataValidate = DateTime.Now;
@@ -144,25 +149,66 @@ namespace Controles
             double converValor = double.Parse(valService);
             double converDesconto = double.Parse(valDesconto);
             double converValorTotal = double.Parse(valTotal);
-
+            
+            converValorTotal = serv.ValorTotal(converDesconto,converValor) ;
+            string sql = null;
+            NpgsqlCommand comm = null;
             NpgsqlConnection conn = new NpgsqlConnection("server=localhost;Port=5432;user id=admin; password=admin123;database=ManutInfor");
-            string sql = "INSERT INTO public.servicos(id_cliente, nameservice,equipamento,pecastrocadas, executservice,valservice,valdesconto,datadoservico,valtotal,defeito)" + "VALUES(@id_cliente,@nameservice,@equipamento,@pecasTrocadas,@executService,@valservices,@valdesconto,@datadoservico,@valTotal,@defeito )";
+            if (code == 1)
+            {
+                 sql = "INSERT INTO public.servicos (id_cliente, nameservice,equipamento,pecastrocadas, executservice,valservice,valdesconto,datadoservico,valtotal,defeito)" + "VALUES(@id_cliente,@nameservice,@equipamento,@pecasTrocadas,@executService,@valservices,@valdesconto,@datadoservico,@valTotal,@defeito )";
 
-            NpgsqlCommand comm = new NpgsqlCommand(sql, conn);
+                comm = new NpgsqlCommand(sql, conn);
 
 
-            //comm.Connection = conn;
-            comm.CommandType = CommandType.Text;
-            comm.Parameters.AddWithValue("@id_cliente", converid);
-            comm.Parameters.AddWithValue("@nameservice", nameService);
-            comm.Parameters.AddWithValue("@equipamento", equipamento);
-            comm.Parameters.AddWithValue("@pecastrocadas", pecasTrocadas);
-            comm.Parameters.AddWithValue("@executservice", executService);
-            comm.Parameters.AddWithValue("@valservices", "" + converValor.ToString("F2") + "");
-            comm.Parameters.AddWithValue("@valdesconto", converDesconto.ToString("F2"));
-            comm.Parameters.AddWithValue("@datadoservico", dataValidate.ToString("dd/MM/yyyy"));
-            comm.Parameters.AddWithValue("@valtotal", converValorTotal.ToString("F2"));
-            comm.Parameters.AddWithValue("@defeito", defeito);
+                //comm.Connection = conn;
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@id_cliente", converid);
+                
+                comm.Parameters.AddWithValue("@nameservice", nameService);
+                comm.Parameters.AddWithValue("@equipamento", equipamento);
+                comm.Parameters.AddWithValue("@pecastrocadas", pecasTrocadas);
+                comm.Parameters.AddWithValue("@executservice", executService);
+                comm.Parameters.AddWithValue("@valservices",  converValor.ToString("F2") );
+                comm.Parameters.AddWithValue("@valdesconto", converDesconto.ToString("F2"));
+                comm.Parameters.AddWithValue("@datadoservico", dataValidate.ToString("dd/MM/yyyy"));
+                comm.Parameters.AddWithValue("@valtotal", converValorTotal.ToString("F2"));
+                comm.Parameters.AddWithValue("@defeito", defeito);
+
+            }
+            else if (code == 2)
+            {
+
+                int converid_servicos = int.Parse(id_servicos);
+                sql = "UPDATE public.servicos SET id_cliente=@id_cliente,nameservice=@nameservice,equipamento=@equipamento,pecastrocadas=@pecastrocadas," +
+                    "executservice=@executservice,valservice=@valservice,valdesconto=@valdesconto,datadoservico=@datadoservico,valtotal=@valtotal,defeito=@defeito where"+ '"'+"id_servicos"+'"'+"=@id_servicos" ;
+
+                comm = new NpgsqlCommand(sql, conn);
+
+
+                //comm.Connection = conn;
+                comm.CommandType = CommandType.Text;
+                comm.Parameters.AddWithValue("@id_cliente",  converid);
+                comm.Parameters.AddWithValue("@id_servicos", converid_servicos);
+                comm.Parameters.AddWithValue("@nameservice",  nameService);
+                comm.Parameters.AddWithValue("@equipamento",  equipamento);
+                comm.Parameters.AddWithValue("@pecastrocadas", pecasTrocadas);
+                comm.Parameters.AddWithValue("@executservice",  executService);
+                comm.Parameters.AddWithValue("@valservice", converValor.ToString("F2") );
+                comm.Parameters.AddWithValue("@valdesconto", converDesconto.ToString("F2"));
+                comm.Parameters.AddWithValue("@datadoservico", dataValidate.ToString("dd/MM/yyyy"));
+                comm.Parameters.AddWithValue("@valtotal",  converValorTotal.ToString("F2"));
+                comm.Parameters.AddWithValue("@defeito", defeito);
+               
+
+            }
+            else
+            {
+                sql = "DELETE FROM public.servicos WHERE " + '"' + "id_servicos" + '"' + "=" + id_servicos + ";";
+                comm = new NpgsqlCommand(sql, conn);
+
+            }
+
             conn.Open();
 
             //comm.CommandText = "INSERT INTO public.servicos(id_cliente, nameservice,equipamento,pecastrocadas, executservice,valservice,valdesconto,datadoservico,valtotal,defeito)" + "VALUES('" + idCliente + "','" + nameService + "','" + equipamento + "','" + pecasTrocadas + "','" + executService + "','" + converValor.ToString("f2") + "','" + converDesconto.ToString("f2") + "','" + dataValidate.ToString("dd/MM/yyyy") + "','" + converValorTotal.ToString("f2") + "','" + defeito + "')";
@@ -174,14 +220,14 @@ namespace Controles
             if (i > 0)
             {
 
-                MessageBox.Show("inserido com sucesso!");
+                MessageBox.Show("Executado com sucesso!");
 
             }
             else
             {
                 MessageBox.Show("erro!");
             }
-
+            
 
             comm.Dispose();
             conn.Close();

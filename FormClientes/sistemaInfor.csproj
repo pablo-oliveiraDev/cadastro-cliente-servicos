@@ -258,6 +258,12 @@
     <Compile Include="Forms\CadServicos .Designer.cs">
       <DependentUpon>CadServicos .cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormRevisao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRevisao.Designer.cs">
+      <DependentUpon>FormRevisao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NovoCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CadServicos .resx">
       <DependentUpon>CadServicos .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRevisao.resx">
+      <DependentUpon>FormRevisao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NovoCliente.resx">
       <DependentUpon>NovoCliente.cs</DependentUpon>

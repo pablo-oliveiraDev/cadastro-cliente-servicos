@@ -202,7 +202,7 @@ namespace Controles
                
 
             }
-            else
+            else 
             {
                 sql = "DELETE FROM public.servicos WHERE " + '"' + "id_servicos" + '"' + "=" + id_servicos + ";";
                 comm = new NpgsqlCommand(sql, conn);

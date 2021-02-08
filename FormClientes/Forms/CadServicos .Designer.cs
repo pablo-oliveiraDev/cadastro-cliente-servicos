@@ -56,6 +56,7 @@ namespace FormClientes.Forms
             this.label11 = new System.Windows.Forms.Label();
             this.textServiceExecut = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tagSolutions
@@ -322,12 +323,26 @@ namespace FormClientes.Forms
             this.label12.Text = "Servicos Exe :";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.Cursor = System.Windows.Forms.Cursors.No;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(318, 507);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(288, 43);
+            this.button1.TabIndex = 44;
+            this.button1.Text = "Oliveira New Solutions";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // CadServicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(608, 552);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textServiceExecut);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.textNameService);
@@ -392,5 +407,6 @@ namespace FormClientes.Forms
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textServiceExecut;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button1;
     }
 }

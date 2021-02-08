@@ -154,5 +154,11 @@ namespace FormCliente
 
 
         }
+
+        private void revisaoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormRevisao frm = new FormRevisao();
+            frm.Show();
+        }
     }
 }

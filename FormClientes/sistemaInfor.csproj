@@ -246,6 +246,12 @@
     <Compile Include="Entities\Excepitions\connExcepitions.cs" />
     <Compile Include="Entities\Revisao.cs" />
     <Compile Include="Entities\Servicos.cs" />
+    <Compile Include="Forms\ConsutaServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConsutaServico.Designer.cs">
+      <DependentUpon>ConsutaServico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +290,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\ConsutaServico.resx">
+      <DependentUpon>ConsutaServico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormCliente.resx">
       <DependentUpon>FormCliente.cs</DependentUpon>
     </EmbeddedResource>

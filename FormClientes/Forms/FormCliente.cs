@@ -160,5 +160,11 @@ namespace FormCliente
             FormRevisao frm = new FormRevisao();
             frm.Show();
         }
+
+        private void consultasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaServico frm = new ConsultaServico();
+            frm.Show();
+        }
     }
 }

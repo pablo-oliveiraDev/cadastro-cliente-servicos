@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
 using Controles;
+using FormClientes;
 
 namespace FormClientes.Forms
 {
@@ -51,18 +52,21 @@ namespace FormClientes.Forms
         {
 
         }
+        
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
+            
             FormRevisao frmRev = new FormRevisao();
             frmRev.refreshGrid();
-           
-            this.Dispose();
+            
+            
 
         }
 
         private void BtnCadastrar_Click(object sender, EventArgs e)
         {
+            
             Controls ctrl = new Controls();
             ctrl.SalvarUpSelectRevisao(1,cboIdCliente.Text,cboIdServicos.Text,default,textDataRevisao.Text);
             FormRevisao frmRev = new FormRevisao();

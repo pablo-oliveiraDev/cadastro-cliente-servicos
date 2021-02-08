@@ -46,6 +46,7 @@ namespace FormCliente
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.serviçosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.revisaoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCliente)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -199,7 +200,8 @@ namespace FormCliente
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.serviçosToolStripMenuItem,
-            this.revisaoToolStripMenuItem});
+            this.revisaoToolStripMenuItem,
+            this.consultasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -219,6 +221,13 @@ namespace FormCliente
             this.revisaoToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
             this.revisaoToolStripMenuItem.Text = "Revisao";
             this.revisaoToolStripMenuItem.Click += new System.EventHandler(this.revisaoToolStripMenuItem_Click);
+            // 
+            // consultasToolStripMenuItem
+            // 
+            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
+            this.consultasToolStripMenuItem.Text = "consultas";
+            this.consultasToolStripMenuItem.Click += new System.EventHandler(this.consultasToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -274,6 +283,7 @@ namespace FormCliente
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem serviçosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem revisaoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
     }
 }
 

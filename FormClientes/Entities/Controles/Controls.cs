@@ -321,6 +321,11 @@ namespace Controles
             conn.Close();
         }
 
+        public void ConsultarCliente()
+        {
+
+        }
+
 
     }
 

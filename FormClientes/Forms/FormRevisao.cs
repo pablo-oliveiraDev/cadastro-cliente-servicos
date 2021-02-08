@@ -11,6 +11,7 @@ using Npgsql;
 using Controles;
 using FormClientes.Forms;
 
+
 namespace FormClientes.Forms
 {
     public partial class FormRevisao : Form
@@ -53,6 +54,7 @@ namespace FormClientes.Forms
             dataGridViewRevisao.DataSource = ds;
             dataGridViewRevisao.DataMember = "revisao";
             conn.Close();
+            
         }
 
         private void BtnDeletar_Click(object sender, EventArgs e)

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
+using Entities;
 using Controles;
 
 namespace FormClientes.Forms
@@ -30,21 +31,21 @@ namespace FormClientes.Forms
             NpgsqlCommand comm = new NpgsqlCommand();
             comm.Connection = conn;
             comm.CommandType = CommandType.Text;
-            comm.CommandText = "select * FROM cliente WHERE nome='" + nome + "'";
+            comm.CommandText = "select"+'"'+"IdCliente"+'"'+" FROM cliente Where nome="+"'"+nome+"'";
             NpgsqlDataReader nc = comm.ExecuteReader();
 
             DataTable clientes = new DataTable();
             clientes.Load(nc);
-            //string clien;
-            dataGridViewConsulta.DataSource = clientes;
-            
-            
-            
-                
-                DataGridViewRow grv = dataGridViewConsulta.Rows[0];
-                string idrow = grv.Cells[0].Value.ToString();
-                int numberGrid = int.Parse(idrow);
            
+            dataGridViewConsulta.DataSource = clientes;
+
+
+            MessageBox.Show(comm.CommandText);
+            DataGridViewRow grv = dataGridViewConsulta.Rows[0];
+            
+             string idrow = grv.Cells[0].Value.ToString();
+             int numberGrid = int.Parse(idrow);
+
             MessageBox.Show(idrow);
             comm = new NpgsqlCommand();
             comm.Connection = conn;
@@ -52,7 +53,7 @@ namespace FormClientes.Forms
             comm.CommandText = "select id_cliente,id_servicos,valtotal from servicos where" + '"' + "id_cliente" + '"' + "=" + numberGrid;
             MessageBox.Show(comm.CommandText);
             NpgsqlDataReader dr = comm.ExecuteReader();
-            
+
             if (dr.HasRows)
             {
 
@@ -63,8 +64,9 @@ namespace FormClientes.Forms
 
 
             }
-            
-           conn.Close();
+
+            conn.Close();
+
 
 
 
@@ -92,8 +94,12 @@ namespace FormClientes.Forms
         private void textNomeCliente_TextChanged(object sender, EventArgs e)
         {
 
-            int texto = textNomeCliente.Text.Length;
-            if (textNomeCliente.Text != null && texto >= 5)
+          
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            if(textNomeCliente.Text!=null)
             {
                 ConsultaCliente(textNomeCliente.Text);
             }

@@ -36,6 +36,7 @@ namespace FormClientes.Forms
             this.tagSolutions = new System.Windows.Forms.Button();
             this.dataGridViewConsulta = new System.Windows.Forms.DataGridView();
             this.dataGridViewConsulta2 = new System.Windows.Forms.DataGridView();
+            this.btnPesquisar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsulta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsulta2)).BeginInit();
             this.SuspendLayout();
@@ -117,12 +118,23 @@ namespace FormClientes.Forms
             this.dataGridViewConsulta2.Size = new System.Drawing.Size(883, 272);
             this.dataGridViewConsulta2.TabIndex = 24;
             // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Location = new System.Drawing.Point(582, 32);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(142, 44);
+            this.btnPesquisar.TabIndex = 25;
+            this.btnPesquisar.Text = "&Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
             // ConsultaServico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(995, 450);
+            this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.dataGridViewConsulta2);
             this.Controls.Add(this.dataGridViewConsulta);
             this.Controls.Add(this.tagSolutions);
@@ -148,5 +160,6 @@ namespace FormClientes.Forms
         private System.Windows.Forms.Button tagSolutions;
         private System.Windows.Forms.DataGridView dataGridViewConsulta;
         private System.Windows.Forms.DataGridView dataGridViewConsulta2;
+        private System.Windows.Forms.Button btnPesquisar;
     }
 }

@@ -25,7 +25,7 @@ namespace Entities
         public DbSet<Revisao> revisao { get; set; }
 
     }
-
+    
 }
 
 

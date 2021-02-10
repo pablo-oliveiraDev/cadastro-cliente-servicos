@@ -29,7 +29,7 @@ namespace FormClientes.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.textDataRevisao = new System.Windows.Forms.TextBox();
+            this.textDataServico = new System.Windows.Forms.TextBox();
             this.textNomeCliente = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,13 +41,13 @@ namespace FormClientes.Forms
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsulta2)).BeginInit();
             this.SuspendLayout();
             // 
-            // textDataRevisao
+            // textDataServico
             // 
-            this.textDataRevisao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textDataRevisao.Location = new System.Drawing.Point(371, 36);
-            this.textDataRevisao.Name = "textDataRevisao";
-            this.textDataRevisao.Size = new System.Drawing.Size(152, 30);
-            this.textDataRevisao.TabIndex = 2;
+            this.textDataServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDataServico.Location = new System.Drawing.Point(371, 36);
+            this.textDataServico.Name = "textDataServico";
+            this.textDataServico.Size = new System.Drawing.Size(152, 30);
+            this.textDataServico.TabIndex = 2;
             // 
             // textNomeCliente
             // 
@@ -139,7 +139,7 @@ namespace FormClientes.Forms
             this.Controls.Add(this.dataGridViewConsulta);
             this.Controls.Add(this.tagSolutions);
             this.Controls.Add(this.textNomeCliente);
-            this.Controls.Add(this.textDataRevisao);
+            this.Controls.Add(this.textDataServico);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Name = "ConsultaServico";
@@ -153,7 +153,7 @@ namespace FormClientes.Forms
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textDataRevisao;
+        private System.Windows.Forms.TextBox textDataServico;
         private System.Windows.Forms.TextBox textNomeCliente;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

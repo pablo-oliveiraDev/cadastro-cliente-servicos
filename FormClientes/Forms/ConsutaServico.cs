@@ -99,9 +99,36 @@ namespace FormClientes.Forms
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            if(textNomeCliente.Text!=null)
+            if(textNomeCliente.Text!=null && textDataServico.Text==null)
             {
                 ConsultaCliente(textNomeCliente.Text);
+            }
+            else
+            {
+                NpgsqlConnection conn = new NpgsqlConnection("server=localhost;Port=5432;user id=admin; password=admin123;database=ManutInfor");
+
+                conn.Open();
+                DateTime dataservico = DateTime.Parse(textDataServico.Text);
+                NpgsqlCommand comm = new NpgsqlCommand();
+                comm.Connection = conn;
+                comm.CommandType = CommandType.Text;
+                comm.CommandText = "select id_cliente,id_servicos,valtotal from servicos where" + '"' + "datadoservico" + '"' + "=" + "'"+ dataservico.ToString("dd/MM/yyyy")+ "'";
+                MessageBox.Show(comm.CommandText);
+                NpgsqlDataReader dr = comm.ExecuteReader();
+
+                if (dr.HasRows)
+                {
+
+
+                    DataTable dt = new DataTable();
+                    dt.Load(dr);
+                    dataGridViewConsulta2.DataSource = dt;
+
+
+                }
+
+                conn.Close();
+
             }
         }
     }

@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Npgsql;
 using Controles;
-using FormCliente;
+using FormClientes.Forms;
+
 
 namespace FormClientes.Forms
 {
@@ -37,13 +38,13 @@ namespace FormClientes.Forms
             TextNome.Clear();
             textEndereco.Clear();
             textDataEntrada.Clear();
-            Form1 frm = new Form1();
+            FormCliente frm = new FormCliente();
             frm.refreshGrid();
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
         {
-            Form1 frm = new Form1();
+            FormCliente frm = new FormCliente();
             frm.refreshGrid();
             this.Dispose();
         }

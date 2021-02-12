@@ -1,7 +1,7 @@
 ﻿
-namespace FormCliente
+namespace FormClientes.Forms
 {
-    partial class Form1
+    partial class FormCliente
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -47,6 +47,7 @@ namespace FormCliente
             this.serviçosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.revisaoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.npgsqlConnection1 = new Npgsql.NpgsqlConnection();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCliente)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -198,10 +199,6 @@ namespace FormCliente
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.serviçosToolStripMenuItem,
-            this.revisaoToolStripMenuItem,
-            this.consultasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -228,6 +225,11 @@ namespace FormCliente
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.consultasToolStripMenuItem.Text = "consultas";
             this.consultasToolStripMenuItem.Click += new System.EventHandler(this.consultasToolStripMenuItem_Click);
+            // 
+            // npgsqlConnection1
+            // 
+            this.npgsqlConnection1.ProvideClientCertificatesCallback = null;
+            this.npgsqlConnection1.UserCertificateValidationCallback = null;
             // 
             // Form1
             // 
@@ -284,6 +286,7 @@ namespace FormCliente
         private System.Windows.Forms.ToolStripMenuItem serviçosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem revisaoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
+        private Npgsql.NpgsqlConnection npgsqlConnection1;
     }
 }
 

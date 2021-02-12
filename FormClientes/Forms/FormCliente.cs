@@ -12,13 +12,13 @@ using Controles;
 using FormClientes.Forms;
 
 
-namespace FormCliente
+namespace FormClientes.Forms
 {
-    public partial class Form1 : Form
+    public partial class FormCliente : Form
     {
-        public Form1 FormCliente { get; set; }
+        public  FormCliente FrmCliente { get; set; }
 
-        public Form1()
+        public FormCliente()
         {
             InitializeComponent();
             NpgsqlConnection conn = new NpgsqlConnection("server=localhost;Port=5432;user id=admin; password=admin123;database=ManutInfor");
@@ -149,7 +149,7 @@ namespace FormCliente
 
             FormServicos formsevices = new FormServicos();
 
-            Form1 formCliente = new Form1();
+            FormCliente formCliente = new FormCliente();
             formsevices.Show();
 
 

@@ -18,13 +18,13 @@ namespace FormClientes.Forms
     {
         public FormInicial FrmInicial { get; set; }
 
-        FormCliente cli = new FormCliente();
-        NovoCliente cadcli = new NovoCliente();
-        FormServicos serv = new FormServicos();
-        CadServicos cadServ = new CadServicos();
-        FormRevisao rev = new FormRevisao();
-        CadRevisao cadRev = new CadRevisao();
-        ConsultaServico consul = new ConsultaServico();
+        
+        
+        
+       
+        
+        
+        
         public FormInicial()
         {
             InitializeComponent();
@@ -52,37 +52,47 @@ namespace FormClientes.Forms
 
         private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FormCliente cli = new FormCliente();
             cli.Show();
         }
 
         private void cadastroClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            NovoCliente cadcli = new NovoCliente();
             cadcli.Show();
         }
 
         private void serviçoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FormServicos serv = new FormServicos();
             serv.Show();
         }
 
         private void cadastroServiçoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            CadServicos cadServ = new CadServicos();
             cadServ.Show();
         }
 
         private void revisãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FormRevisao rev = new FormRevisao();
             rev.Show();
         }
 
         private void casdastroRevisãoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            CadRevisao cadRev = new CadRevisao();
             cadRev.Show();
         }
 
         private void cnsultaServiçosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ConsultaServico consul = new ConsultaServico();
             consul.Show();
+            
         }
+
+       
     }
 }

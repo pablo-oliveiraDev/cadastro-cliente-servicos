@@ -117,7 +117,7 @@ namespace FormClientes.Forms
         private void BtncadCancel(object sender, EventArgs e)
         {
 
-            this.Dispose();
+            this.Close();
         }
 
         private void BtnAtualizar(object sender, EventArgs e)

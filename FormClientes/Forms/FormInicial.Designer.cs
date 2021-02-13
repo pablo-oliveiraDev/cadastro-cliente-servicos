@@ -29,8 +29,7 @@ namespace FormClientes.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.BtnCancel = new System.Windows.Forms.Button();
-            this.btnCadastrar = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInicial));
             this.tagSolutions = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,31 +43,11 @@ namespace FormClientes.Forms
             this.casdastroRevisãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cnsultaServiçosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnCliente = new System.Windows.Forms.Button();
+            this.BtnCancel = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // BtnCancel
-            // 
-            this.BtnCancel.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.BtnCancel.Cursor = System.Windows.Forms.Cursors.Default;
-            this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancel.Location = new System.Drawing.Point(335, 429);
-            this.BtnCancel.Name = "BtnCancel";
-            this.BtnCancel.Size = new System.Drawing.Size(141, 46);
-            this.BtnCancel.TabIndex = 14;
-            this.BtnCancel.Text = "&Sair";
-            this.BtnCancel.UseVisualStyleBackColor = false;
-            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
-            // 
-            // btnCadastrar
-            // 
-            this.btnCadastrar.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnCadastrar.Location = new System.Drawing.Point(124, 429);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(141, 46);
-            this.btnCadastrar.TabIndex = 15;
-            this.btnCadastrar.Text = "&Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = false;
             // 
             // tagSolutions
             // 
@@ -109,14 +88,14 @@ namespace FormClientes.Forms
             // clienteToolStripMenuItem
             // 
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
             this.clienteToolStripMenuItem.Text = "Cliente";
             this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
             // 
             // cadastroClienteToolStripMenuItem
             // 
             this.cadastroClienteToolStripMenuItem.Name = "cadastroClienteToolStripMenuItem";
-            this.cadastroClienteToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cadastroClienteToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
             this.cadastroClienteToolStripMenuItem.Text = "Cadastro Cliente";
             this.cadastroClienteToolStripMenuItem.Click += new System.EventHandler(this.cadastroClienteToolStripMenuItem_Click);
             // 
@@ -132,14 +111,14 @@ namespace FormClientes.Forms
             // serviçoToolStripMenuItem
             // 
             this.serviçoToolStripMenuItem.Name = "serviçoToolStripMenuItem";
-            this.serviçoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.serviçoToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
             this.serviçoToolStripMenuItem.Text = "Serviço";
             this.serviçoToolStripMenuItem.Click += new System.EventHandler(this.serviçoToolStripMenuItem_Click);
             // 
             // cadastroServiçoToolStripMenuItem
             // 
             this.cadastroServiçoToolStripMenuItem.Name = "cadastroServiçoToolStripMenuItem";
-            this.cadastroServiçoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cadastroServiçoToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
             this.cadastroServiçoToolStripMenuItem.Text = "Cadastro Serviço";
             this.cadastroServiçoToolStripMenuItem.Click += new System.EventHandler(this.cadastroServiçoToolStripMenuItem_Click);
             // 
@@ -155,14 +134,14 @@ namespace FormClientes.Forms
             // revisãoToolStripMenuItem
             // 
             this.revisãoToolStripMenuItem.Name = "revisãoToolStripMenuItem";
-            this.revisãoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.revisãoToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.revisãoToolStripMenuItem.Text = "Revisão";
             this.revisãoToolStripMenuItem.Click += new System.EventHandler(this.revisãoToolStripMenuItem_Click);
             // 
             // casdastroRevisãoToolStripMenuItem
             // 
             this.casdastroRevisãoToolStripMenuItem.Name = "casdastroRevisãoToolStripMenuItem";
-            this.casdastroRevisãoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.casdastroRevisãoToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.casdastroRevisãoToolStripMenuItem.Text = "Casdastro Revisão";
             this.casdastroRevisãoToolStripMenuItem.Click += new System.EventHandler(this.casdastroRevisãoToolStripMenuItem_Click);
             // 
@@ -178,22 +157,70 @@ namespace FormClientes.Forms
             // 
             this.cnsultaServiçosToolStripMenuItem.Name = "cnsultaServiçosToolStripMenuItem";
             this.cnsultaServiçosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.cnsultaServiçosToolStripMenuItem.Text = "Cnsulta Serviços";
+            this.cnsultaServiçosToolStripMenuItem.Text = "Consulta Serviços";
             this.cnsultaServiçosToolStripMenuItem.Click += new System.EventHandler(this.cnsultaServiçosToolStripMenuItem_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::FormClientes.Properties.Resources.Config;
+            this.button1.Location = new System.Drawing.Point(229, 53);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(152, 151);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "&Serviços";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btnCliente
+            // 
+            this.btnCliente.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCliente.Image = global::FormClientes.Properties.Resources.Cliente;
+            this.btnCliente.Location = new System.Drawing.Point(35, 53);
+            this.btnCliente.Name = "btnCliente";
+            this.btnCliente.Size = new System.Drawing.Size(152, 151);
+            this.btnCliente.TabIndex = 18;
+            this.btnCliente.Text = "&Cliente";
+            this.btnCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCliente.UseVisualStyleBackColor = false;
+            // 
+            // BtnCancel
+            // 
+            this.BtnCancel.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.BtnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BtnCancel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancel.Location = new System.Drawing.Point(790, 436);
+            this.BtnCancel.Name = "BtnCancel";
+            this.BtnCancel.Size = new System.Drawing.Size(141, 46);
+            this.BtnCancel.TabIndex = 14;
+            this.BtnCancel.Text = "&Sair";
+            this.BtnCancel.UseVisualStyleBackColor = false;
+            this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
             // FormInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(958, 541);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCliente);
             this.Controls.Add(this.tagSolutions);
             this.Controls.Add(this.BtnCancel);
-            this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.menuStrip1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormInicial";
-            this.Text = "NovoCliente";
+            this.Text = "Home_Menu";
             this.Load += new System.EventHandler(this.FormInicial_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -204,7 +231,6 @@ namespace FormClientes.Forms
 
         #endregion
         private System.Windows.Forms.Button BtnCancel;
-        private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button tagSolutions;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
@@ -218,5 +244,7 @@ namespace FormClientes.Forms
         private System.Windows.Forms.ToolStripMenuItem casdastroRevisãoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cnsultaServiçosToolStripMenuItem;
+        private System.Windows.Forms.Button btnCliente;
+        private System.Windows.Forms.Button button1;
     }
 }

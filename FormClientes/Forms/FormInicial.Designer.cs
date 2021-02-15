@@ -43,9 +43,12 @@ namespace FormClientes.Forms
             this.casdastroRevisãoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cnsultaServiçosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnCliente = new System.Windows.Forms.Button();
             this.BtnCancel = new System.Windows.Forms.Button();
+            this.btnRevisao = new System.Windows.Forms.Button();
+            this.btnServicos = new System.Windows.Forms.Button();
+            this.btnCliente = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +75,7 @@ namespace FormClientes.Forms
             this.consultasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(958, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(958, 30);
             this.menuStrip1.TabIndex = 17;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -82,7 +85,7 @@ namespace FormClientes.Forms
             this.clienteToolStripMenuItem,
             this.cadastroClienteToolStripMenuItem});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(75, 26);
             this.clientesToolStripMenuItem.Text = "Clientes";
             // 
             // clienteToolStripMenuItem
@@ -105,7 +108,7 @@ namespace FormClientes.Forms
             this.serviçoToolStripMenuItem,
             this.cadastroServiçoToolStripMenuItem});
             this.serviçosToolStripMenuItem.Name = "serviçosToolStripMenuItem";
-            this.serviçosToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+            this.serviçosToolStripMenuItem.Size = new System.Drawing.Size(77, 26);
             this.serviçosToolStripMenuItem.Text = "Serviços";
             // 
             // serviçoToolStripMenuItem
@@ -128,7 +131,7 @@ namespace FormClientes.Forms
             this.revisãoToolStripMenuItem,
             this.casdastroRevisãoToolStripMenuItem});
             this.revisõesToolStripMenuItem.Name = "revisõesToolStripMenuItem";
-            this.revisõesToolStripMenuItem.Size = new System.Drawing.Size(80, 24);
+            this.revisõesToolStripMenuItem.Size = new System.Drawing.Size(80, 26);
             this.revisõesToolStripMenuItem.Text = "Revisões";
             // 
             // revisãoToolStripMenuItem
@@ -150,45 +153,15 @@ namespace FormClientes.Forms
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cnsultaServiçosToolStripMenuItem});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(86, 26);
             this.consultasToolStripMenuItem.Text = "Consultas";
             // 
             // cnsultaServiçosToolStripMenuItem
             // 
             this.cnsultaServiçosToolStripMenuItem.Name = "cnsultaServiçosToolStripMenuItem";
-            this.cnsultaServiçosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cnsultaServiçosToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.cnsultaServiçosToolStripMenuItem.Text = "Consulta Serviços";
             this.cnsultaServiçosToolStripMenuItem.Click += new System.EventHandler(this.cnsultaServiçosToolStripMenuItem_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::FormClientes.Properties.Resources.Config;
-            this.button1.Location = new System.Drawing.Point(229, 53);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 151);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "&Serviços";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // btnCliente
-            // 
-            this.btnCliente.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCliente.Image = global::FormClientes.Properties.Resources.Cliente;
-            this.btnCliente.Location = new System.Drawing.Point(35, 53);
-            this.btnCliente.Name = "btnCliente";
-            this.btnCliente.Size = new System.Drawing.Size(152, 151);
-            this.btnCliente.TabIndex = 18;
-            this.btnCliente.Text = "&Cliente";
-            this.btnCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCliente.UseVisualStyleBackColor = false;
             // 
             // BtnCancel
             // 
@@ -204,6 +177,74 @@ namespace FormClientes.Forms
             this.BtnCancel.UseVisualStyleBackColor = false;
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
+            // btnRevisao
+            // 
+            this.btnRevisao.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnRevisao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnRevisao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRevisao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRevisao.Image = global::FormClientes.Properties.Resources.Atendimento;
+            this.btnRevisao.Location = new System.Drawing.Point(505, 53);
+            this.btnRevisao.Name = "btnRevisao";
+            this.btnRevisao.Size = new System.Drawing.Size(152, 151);
+            this.btnRevisao.TabIndex = 20;
+            this.btnRevisao.Text = "&Revisão";
+            this.btnRevisao.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRevisao.UseVisualStyleBackColor = false;
+            this.btnRevisao.Click += new System.EventHandler(this.btnRevisao_Click);
+            // 
+            // btnServicos
+            // 
+            this.btnServicos.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnServicos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnServicos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnServicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnServicos.Image = global::FormClientes.Properties.Resources.Config;
+            this.btnServicos.Location = new System.Drawing.Point(274, 53);
+            this.btnServicos.Name = "btnServicos";
+            this.btnServicos.Size = new System.Drawing.Size(152, 151);
+            this.btnServicos.TabIndex = 19;
+            this.btnServicos.Text = "&Serviços";
+            this.btnServicos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnServicos.UseVisualStyleBackColor = false;
+            this.btnServicos.Click += new System.EventHandler(this.btnServicos_Click);
+            // 
+            // btnCliente
+            // 
+            this.btnCliente.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCliente.Image = global::FormClientes.Properties.Resources.Cliente;
+            this.btnCliente.Location = new System.Drawing.Point(43, 53);
+            this.btnCliente.Name = "btnCliente";
+            this.btnCliente.Size = new System.Drawing.Size(152, 151);
+            this.btnCliente.TabIndex = 18;
+            this.btnCliente.Text = "&Cliente";
+            this.btnCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCliente.UseVisualStyleBackColor = false;
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Matura MT Script Capitals", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(68, 269);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(317, 45);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Your\'s Solutions ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Matura MT Script Capitals", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(244, 342);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(316, 45);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "are Created in here";
+            // 
             // FormInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -211,7 +252,10 @@ namespace FormClientes.Forms
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(958, 541);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnRevisao);
+            this.Controls.Add(this.btnServicos);
             this.Controls.Add(this.btnCliente);
             this.Controls.Add(this.tagSolutions);
             this.Controls.Add(this.BtnCancel);
@@ -245,6 +289,9 @@ namespace FormClientes.Forms
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cnsultaServiçosToolStripMenuItem;
         private System.Windows.Forms.Button btnCliente;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnServicos;
+        private System.Windows.Forms.Button btnRevisao;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

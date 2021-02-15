@@ -37,6 +37,10 @@ namespace FormClientes.Forms
             this.dataGridViewConsulta = new System.Windows.Forms.DataGridView();
             this.dataGridViewConsulta2 = new System.Windows.Forms.DataGridView();
             this.btnPesquisar = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printDialog2 = new System.Windows.Forms.PrintDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsulta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsulta2)).BeginInit();
             this.SuspendLayout();
@@ -117,6 +121,7 @@ namespace FormClientes.Forms
             this.dataGridViewConsulta2.RowTemplate.Height = 24;
             this.dataGridViewConsulta2.Size = new System.Drawing.Size(883, 272);
             this.dataGridViewConsulta2.TabIndex = 24;
+            this.dataGridViewConsulta2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewConsulta2_CellContentClick);
             // 
             // btnPesquisar
             // 
@@ -128,12 +133,31 @@ namespace FormClientes.Forms
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Location = new System.Drawing.Point(749, 32);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(142, 44);
+            this.btnImprimir.TabIndex = 26;
+            this.btnImprimir.Text = "&Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
+            // printDialog2
+            // 
+            this.printDialog2.UseEXDialog = true;
+            // 
             // ConsultaServico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(995, 450);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.dataGridViewConsulta2);
             this.Controls.Add(this.dataGridViewConsulta);
@@ -161,5 +185,9 @@ namespace FormClientes.Forms
         private System.Windows.Forms.DataGridView dataGridViewConsulta;
         private System.Windows.Forms.DataGridView dataGridViewConsulta2;
         private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintDialog printDialog2;
     }
 }

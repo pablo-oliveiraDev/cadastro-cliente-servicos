@@ -93,6 +93,22 @@ namespace FormClientes.Forms
             
         }
 
-       
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            FormCliente cli = new FormCliente();
+            cli.Show();
+        }
+
+        private void btnServicos_Click(object sender, EventArgs e)
+        {
+            FormServicos serv = new FormServicos();
+            serv.Show();
+        }
+
+        private void btnRevisao_Click(object sender, EventArgs e)
+        {
+            FormRevisao rev = new FormRevisao();
+            rev.Show();
+        }
     }
 }

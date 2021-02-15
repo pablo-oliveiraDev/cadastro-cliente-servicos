@@ -63,6 +63,16 @@ namespace FormClientes.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Atendimento {
+            get {
+                object obj = ResourceManager.GetObject("Atendimento", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cliente {
             get {
                 object obj = ResourceManager.GetObject("Cliente", resourceCulture);

@@ -57,8 +57,8 @@ namespace FormClientes.Forms
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             
-            FormRevisao frmRev = new FormRevisao();
-            frmRev.refreshGrid();
+            CadRevisao frmRev = new CadRevisao();
+            this.Dispose();
             
             
 

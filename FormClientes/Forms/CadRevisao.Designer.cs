@@ -102,6 +102,7 @@ namespace FormClientes.Forms
             // BtnCancel
             // 
             this.BtnCancel.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.BtnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancel.Location = new System.Drawing.Point(186, 289);
             this.BtnCancel.Name = "BtnCancel";
@@ -114,6 +115,7 @@ namespace FormClientes.Forms
             // BtnCadastrar
             // 
             this.BtnCadastrar.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.BtnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCadastrar.Location = new System.Drawing.Point(23, 289);
             this.BtnCadastrar.Name = "BtnCadastrar";

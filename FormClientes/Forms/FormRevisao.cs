@@ -61,7 +61,7 @@ namespace FormClientes.Forms
         {
 
         }
-
+        string numberCliente;
         private void dataGridViewRevisao_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int select_row;
@@ -71,7 +71,9 @@ namespace FormClientes.Forms
             {
                 select_row = e.RowIndex;
                 DataGridViewRow grv = dataGridViewRevisao.Rows[select_row];
-                textIdCliente.Text= grv.Cells[0].Value.ToString();
+                numberCliente= grv.Cells[0].Value.ToString();
+                ConsultaServico frmConSer = new ConsultaServico();
+                textIdCliente.Text = frmConSer.NomeCli(numberCliente);
                 textidService.Text = grv.Cells[1].Value.ToString();
                 textIdRevisao.Text = grv.Cells[2].Value.ToString();
                 textDataRevisao.Text = grv.Cells[3].Value.ToString();
@@ -102,7 +104,7 @@ namespace FormClientes.Forms
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             Controls ctrl = new Controls();
-            ctrl.SalvarUpSelectRevisao(2, textIdCliente.Text, textidService.Text, textIdRevisao.Text, textDataRevisao.Text);
+            ctrl.SalvarUpSelectRevisao(2, numberCliente, textidService.Text, textIdRevisao.Text, textDataRevisao.Text);
             ResetText();
             refreshGrid();
             

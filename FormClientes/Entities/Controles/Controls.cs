@@ -178,7 +178,7 @@ namespace Controles
             }
             else if (code == 2)
             {
-
+                DateTime converData = DateTime.Parse(dataDoServico);
                 int converid_servicos = int.Parse(id_servicos);
                 sql = "UPDATE public.servicos SET id_cliente=@id_cliente,nameservice=@nameservice,equipamento=@equipamento,pecastrocadas=@pecastrocadas," +
                     "executservice=@executservice,valservice=@valservice,valdesconto=@valdesconto,datadoservico=@datadoservico,valtotal=@valtotal,defeito=@defeito where" + '"' + "id_servicos" + '"' + "=@id_servicos";
@@ -196,7 +196,7 @@ namespace Controles
                 comm.Parameters.AddWithValue("@executservice", executService);
                 comm.Parameters.AddWithValue("@valservice", converValor.ToString("F2"));
                 comm.Parameters.AddWithValue("@valdesconto", converDesconto.ToString("F2"));
-                comm.Parameters.AddWithValue("@datadoservico", dataValidate.ToString("dd/MM/yyyy"));
+                comm.Parameters.AddWithValue("@datadoservico", converData.ToString("dd/MM/yyyy"));
                 comm.Parameters.AddWithValue("@valtotal", converValorTotal.ToString("F2"));
                 comm.Parameters.AddWithValue("@defeito", defeito);
 

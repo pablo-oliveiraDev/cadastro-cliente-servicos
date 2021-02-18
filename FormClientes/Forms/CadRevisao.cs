@@ -30,7 +30,7 @@ namespace FormClientes.Forms
 
             DataTable dt = new DataTable();
             dt.Load(dr);
-            cboIdCliente.DisplayMember = "IdCliente";
+            cboIdCliente.DisplayMember = "nome";
             cboIdCliente.DataSource = dt;
             comm = new NpgsqlCommand();
             comm.Connection = conn;
@@ -66,9 +66,10 @@ namespace FormClientes.Forms
 
         private void BtnCadastrar_Click(object sender, EventArgs e)
         {
-            
+            ConsultaServico frmConServ = new ConsultaServico();
+            string idCliente = frmConServ.idcliente(cboIdCliente.Text);
             Controls ctrl = new Controls();
-            ctrl.SalvarUpSelectRevisao(1,cboIdCliente.Text,cboIdServicos.Text,default,textDataRevisao.Text);
+            ctrl.SalvarUpSelectRevisao(1,idCliente,cboIdServicos.Text,default,textDataRevisao.Text);
             FormRevisao frmRev = new FormRevisao();
             frmRev.refreshGrid();
         }

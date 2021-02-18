@@ -38,8 +38,8 @@ namespace FormClientes.Forms
                
                 
             }
+            refreshGrid();
 
-            
 
         }
         public void refreshGrid()
@@ -58,23 +58,27 @@ namespace FormClientes.Forms
 
         private void Servicos_Load(object sender, EventArgs e)
         {
-
+            
             
            
         }
 
-        
+        string numberCliente;
 
-        private void dataGridViewServicos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void dataGridViewServicos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int select_row;
 
-
+            
             if (e.RowIndex >= 0)
             {
                 select_row = e.RowIndex;
                 DataGridViewRow grv = dataGridViewServicos.Rows[select_row];
-                textidcliente.Text= grv.Cells[0].Value.ToString();
+                 numberCliente= grv.Cells[0].Value.ToString();
+                ConsultaServico frmconSer = new ConsultaServico();
+                textidcliente.Text = frmconSer.NomeCli(numberCliente);
+
+
                 textIdServico.Text = grv.Cells[1].Value.ToString();
                 textNameService.Text= grv.Cells[2].Value.ToString();
                 textEquip.Text= grv.Cells[3].Value.ToString();
@@ -104,10 +108,10 @@ namespace FormClientes.Forms
             refreshGrid();
         }
 
-        private void btnAtualizar_click(object sender, EventArgs e)
+        public void btnAtualizar_click(object sender, EventArgs e)
         {
             Controls crtl = new Controls();
-            crtl.SalvarUpSelectSevices(2, textidcliente.Text, textIdServico.Text,textNameService.Text, textEquip.Text, textPecas.Text,textServices.Text, textValor.Text, textDesconto.Text, textDataService.Text, textValor.Text, textDefeitos.Text);
+            crtl.SalvarUpSelectSevices(2, numberCliente, textIdServico.Text,textNameService.Text, textEquip.Text, textPecas.Text,textServices.Text, textValor.Text, textDesconto.Text, textDataService.Text, textValor.Text, textDefeitos.Text);
             refreshGrid();
             
 

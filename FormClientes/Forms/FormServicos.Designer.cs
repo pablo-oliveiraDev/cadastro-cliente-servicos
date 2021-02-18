@@ -265,6 +265,7 @@ namespace FormClientes.Forms
             // BtnNovo
             // 
             this.BtnNovo.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.BtnNovo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnNovo.Location = new System.Drawing.Point(125, 194);
             this.BtnNovo.Name = "BtnNovo";
@@ -303,6 +304,7 @@ namespace FormClientes.Forms
             // btnAtualizar
             // 
             this.btnAtualizar.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnAtualizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtualizar.Location = new System.Drawing.Point(325, 194);
             this.btnAtualizar.Name = "btnAtualizar";
@@ -315,6 +317,7 @@ namespace FormClientes.Forms
             // btnDeletar
             // 
             this.btnDeletar.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnDeletar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeletar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeletar.Location = new System.Drawing.Point(525, 194);
             this.btnDeletar.Name = "btnDeletar";
@@ -327,6 +330,7 @@ namespace FormClientes.Forms
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Location = new System.Drawing.Point(725, 194);
             this.btnCancelar.Name = "btnCancelar";

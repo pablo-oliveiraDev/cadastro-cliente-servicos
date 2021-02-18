@@ -45,11 +45,43 @@ namespace FormClientes.Forms
 
 
 
-            MessageBox.Show("");
+            
 
             dataGridViewConsulta.DataSource = clientes;
 
+            
+
+
+
+
+            string idrow = dataGridViewConsulta.Rows[0].Cells[0].Value.ToString();
+            return idrow;
+
+        }
+        public string idcliente(string nome)
+        {
+            
+            NpgsqlConnection conn = new NpgsqlConnection("server=localhost;Port=5432;user id=admin; password=admin123;database=ManutInfor");
+
+            conn.Open();
+            NpgsqlCommand comm = new NpgsqlCommand();
+            comm.Connection = conn;
+            comm.CommandType = CommandType.Text;
+            comm.CommandText = $"select" + '"' + "IdCliente" + '"' + $"FROM cliente Where nome Like '%{nome}%'";
+            NpgsqlDataReader nc = comm.ExecuteReader();
+
             MessageBox.Show(comm.CommandText);
+
+            DataTable clientes = new DataTable();
+            clientes.Load(nc);
+
+
+
+
+
+            dataGridViewConsulta.DataSource = clientes;
+
+
 
 
 

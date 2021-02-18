@@ -49,7 +49,6 @@ namespace FormClientes.Forms
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.npgsqlConnection1 = new Npgsql.NpgsqlConnection();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCliente)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -120,6 +119,7 @@ namespace FormClientes.Forms
             // btnCadastrar
             // 
             this.btnCadastrar.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.Location = new System.Drawing.Point(74, 180);
             this.btnCadastrar.Name = "btnCadastrar";
@@ -132,6 +132,7 @@ namespace FormClientes.Forms
             // BtnNovo
             // 
             this.BtnNovo.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.BtnNovo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnNovo.Location = new System.Drawing.Point(233, 180);
             this.BtnNovo.Name = "BtnNovo";
@@ -144,6 +145,7 @@ namespace FormClientes.Forms
             // BtnCancel
             // 
             this.BtnCancel.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.BtnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancel.Location = new System.Drawing.Point(403, 180);
             this.BtnCancel.Name = "BtnCancel";
@@ -187,6 +189,7 @@ namespace FormClientes.Forms
             // BtnDeletar
             // 
             this.BtnDeletar.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.BtnDeletar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnDeletar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnDeletar.Location = new System.Drawing.Point(563, 179);
             this.BtnDeletar.Name = "BtnDeletar";
@@ -201,7 +204,7 @@ namespace FormClientes.Forms
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 14;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -231,7 +234,7 @@ namespace FormClientes.Forms
             this.npgsqlConnection1.ProvideClientCertificatesCallback = null;
             this.npgsqlConnection1.UserCertificateValidationCallback = null;
             // 
-            // Form1
+            // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -253,14 +256,12 @@ namespace FormClientes.Forms
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "FormCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliente";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCliente)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

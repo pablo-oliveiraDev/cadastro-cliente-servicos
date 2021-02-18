@@ -43,7 +43,7 @@ namespace FormClientes.Forms
 
             DataTable dt = new DataTable();
             dt.Load(dr);
-            comboBox1.DisplayMember = "IdCliente";
+            comboBox1.DisplayMember = "nome";
             comboBox1.DataSource = dt;
             conn.Close();
             
@@ -66,10 +66,11 @@ namespace FormClientes.Forms
 
         private void BtnNovo_Click(object sender, EventArgs e)
         {
-           
+            ConsultaServico frmConSer = new ConsultaServico();
+            string numberId = frmConSer.idcliente(comboBox1.Text);
             Controls ctrl = new Controls();
                        
-            ctrl.SalvarUpSelectSevices(1,comboBox1.Text,default,textNameService.Text,textEquip.Text,textPecas.Text,textServices.Text,textValor.Text,textDesconto.Text,textDataService.Text,textValor.Text,textDefeitos.Text);
+            ctrl.SalvarUpSelectSevices(1,numberId,default,textNameService.Text,textEquip.Text,textPecas.Text,textServices.Text,textValor.Text,textDesconto.Text,textDataService.Text,textValor.Text,textDefeitos.Text);
             ctrl.limparText();
             FormServicos frm = new FormServicos();
             frm.refreshGrid();
@@ -80,34 +81,6 @@ namespace FormClientes.Forms
             this.Dispose();
         }
 
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

@@ -159,7 +159,7 @@ namespace FormClientes.Forms
             this.label5.Size = new System.Drawing.Size(88, 20);
             this.label5.TabIndex = 26;
             this.label5.Text = "Servicos:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            
             // 
             // label6
             // 
@@ -180,7 +180,7 @@ namespace FormClientes.Forms
             this.label7.Size = new System.Drawing.Size(73, 20);
             this.label7.TabIndex = 28;
             this.label7.Text = "Peças :";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            
             // 
             // label8
             // 
@@ -191,7 +191,7 @@ namespace FormClientes.Forms
             this.label8.Size = new System.Drawing.Size(92, 20);
             this.label8.TabIndex = 29;
             this.label8.Text = "Defeitos :";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
+           
             // 
             // label9
             // 
@@ -202,7 +202,7 @@ namespace FormClientes.Forms
             this.label9.Size = new System.Drawing.Size(129, 20);
             this.label9.TabIndex = 30;
             this.label9.Text = "Equipamento :";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+           
             // 
             // label10
             // 
@@ -302,7 +302,7 @@ namespace FormClientes.Forms
             this.label11.Size = new System.Drawing.Size(84, 20);
             this.label11.TabIndex = 41;
             this.label11.Text = "Serviço :";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
+           
             // 
             // textServiceExecut
             // 
@@ -321,7 +321,7 @@ namespace FormClientes.Forms
             this.label12.Size = new System.Drawing.Size(131, 20);
             this.label12.TabIndex = 43;
             this.label12.Text = "Servicos Exe :";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
+           
             // 
             // button1
             // 

@@ -29,6 +29,7 @@ namespace FormClientes.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCliente));
             this.label1 = new System.Windows.Forms.Label();
             this.TextNome = new System.Windows.Forms.TextBox();
             this.textEndereco = new System.Windows.Forms.TextBox();
@@ -48,6 +49,7 @@ namespace FormClientes.Forms
             this.revisaoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.npgsqlConnection1 = new Npgsql.NpgsqlConnection();
+            this.btnHome = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -234,12 +236,29 @@ namespace FormClientes.Forms
             this.npgsqlConnection1.ProvideClientCertificatesCallback = null;
             this.npgsqlConnection1.UserCertificateValidationCallback = null;
             // 
+            // btnHome
+            // 
+            this.btnHome.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Image = global::FormClientes.Properties.Resources.home;
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnHome.Location = new System.Drawing.Point(651, 69);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(90, 90);
+            this.btnHome.TabIndex = 15;
+            this.btnHome.Text = "Home";
+            this.btnHome.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
             // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 485);
+            this.Controls.Add(this.btnHome);
             this.Controls.Add(this.BtnDeletar);
             this.Controls.Add(this.textId);
             this.Controls.Add(this.label4);
@@ -255,12 +274,13 @@ namespace FormClientes.Forms
             this.Controls.Add(this.TextNome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliente";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.FormCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -288,6 +308,7 @@ namespace FormClientes.Forms
         private System.Windows.Forms.ToolStripMenuItem revisaoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
         private Npgsql.NpgsqlConnection npgsqlConnection1;
+        private System.Windows.Forms.Button btnHome;
     }
 }
 

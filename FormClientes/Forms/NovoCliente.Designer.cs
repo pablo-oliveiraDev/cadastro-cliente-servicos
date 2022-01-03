@@ -29,6 +29,7 @@ namespace FormClientes.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NovoCliente));
             this.textDataEntrada = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textEndereco = new System.Windows.Forms.TextBox();
@@ -38,6 +39,7 @@ namespace FormClientes.Forms
             this.BtnCancel = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.tagSolutions = new System.Windows.Forms.Button();
+            this.btnHome = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textDataEntrada
@@ -104,7 +106,7 @@ namespace FormClientes.Forms
             // 
             this.btnCadastrar.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCadastrar.Location = new System.Drawing.Point(135, 177);
+            this.btnCadastrar.Location = new System.Drawing.Point(43, 177);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(141, 46);
             this.btnCadastrar.TabIndex = 15;
@@ -125,12 +127,29 @@ namespace FormClientes.Forms
             this.tagSolutions.Text = "Oliveira New Solutions";
             this.tagSolutions.UseVisualStyleBackColor = false;
             // 
+            // btnHome
+            // 
+            this.btnHome.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Image = global::FormClientes.Properties.Resources.home;
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnHome.Location = new System.Drawing.Point(224, 149);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(90, 90);
+            this.btnHome.TabIndex = 17;
+            this.btnHome.Text = "Home";
+            this.btnHome.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
             // NovoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(571, 288);
+            this.Controls.Add(this.btnHome);
             this.Controls.Add(this.tagSolutions);
             this.Controls.Add(this.BtnCancel);
             this.Controls.Add(this.btnCadastrar);
@@ -140,6 +159,7 @@ namespace FormClientes.Forms
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TextNome);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NovoCliente";
             this.Text = "NovoCliente";
             this.Load += new System.EventHandler(this.NovoCliente_Load);
@@ -159,5 +179,6 @@ namespace FormClientes.Forms
         private System.Windows.Forms.Button BtnCancel;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Button tagSolutions;
+        private System.Windows.Forms.Button btnHome;
     }
 }

@@ -43,6 +43,7 @@ namespace FormClientes.Forms
             this.BtnNovo = new System.Windows.Forms.Button();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.tagSolutions = new System.Windows.Forms.Button();
+            this.btnHome = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRevisao)).BeginInit();
             this.SuspendLayout();
             // 
@@ -199,12 +200,29 @@ namespace FormClientes.Forms
             this.tagSolutions.Text = "Oliveira New Solutions";
             this.tagSolutions.UseVisualStyleBackColor = false;
             // 
+            // btnHome
+            // 
+            this.btnHome.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Image = global::FormClientes.Properties.Resources.home;
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnHome.Location = new System.Drawing.Point(617, 84);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(90, 90);
+            this.btnHome.TabIndex = 19;
+            this.btnHome.Text = "Home";
+            this.btnHome.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
             // FormRevisao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(757, 523);
+            this.Controls.Add(this.btnHome);
             this.Controls.Add(this.tagSolutions);
             this.Controls.Add(this.BtnDeletar);
             this.Controls.Add(this.BtnCancel);
@@ -244,5 +262,6 @@ namespace FormClientes.Forms
         private System.Windows.Forms.Button BtnNovo;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Button tagSolutions;
+        private System.Windows.Forms.Button btnHome;
     }
 }

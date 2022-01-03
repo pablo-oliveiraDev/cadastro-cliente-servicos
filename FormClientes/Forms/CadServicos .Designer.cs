@@ -29,6 +29,7 @@ namespace FormClientes.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadServicos));
             this.tagSolutions = new System.Windows.Forms.Button();
             this.textIdServico = new System.Windows.Forms.TextBox();
             this.textEquip = new System.Windows.Forms.TextBox();
@@ -57,6 +58,7 @@ namespace FormClientes.Forms
             this.textServiceExecut = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnHome = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tagSolutions
@@ -159,7 +161,6 @@ namespace FormClientes.Forms
             this.label5.Size = new System.Drawing.Size(88, 20);
             this.label5.TabIndex = 26;
             this.label5.Text = "Servicos:";
-            
             // 
             // label6
             // 
@@ -180,7 +181,6 @@ namespace FormClientes.Forms
             this.label7.Size = new System.Drawing.Size(73, 20);
             this.label7.TabIndex = 28;
             this.label7.Text = "Peças :";
-            
             // 
             // label8
             // 
@@ -191,7 +191,6 @@ namespace FormClientes.Forms
             this.label8.Size = new System.Drawing.Size(92, 20);
             this.label8.TabIndex = 29;
             this.label8.Text = "Defeitos :";
-           
             // 
             // label9
             // 
@@ -202,7 +201,6 @@ namespace FormClientes.Forms
             this.label9.Size = new System.Drawing.Size(129, 20);
             this.label9.TabIndex = 30;
             this.label9.Text = "Equipamento :";
-           
             // 
             // label10
             // 
@@ -302,7 +300,6 @@ namespace FormClientes.Forms
             this.label11.Size = new System.Drawing.Size(84, 20);
             this.label11.TabIndex = 41;
             this.label11.Text = "Serviço :";
-           
             // 
             // textServiceExecut
             // 
@@ -321,7 +318,6 @@ namespace FormClientes.Forms
             this.label12.Size = new System.Drawing.Size(131, 20);
             this.label12.TabIndex = 43;
             this.label12.Text = "Servicos Exe :";
-           
             // 
             // button1
             // 
@@ -336,12 +332,29 @@ namespace FormClientes.Forms
             this.button1.Text = "Oliveira New Solutions";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // btnHome
+            // 
+            this.btnHome.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Image = global::FormClientes.Properties.Resources.home;
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnHome.Location = new System.Drawing.Point(256, 417);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(90, 90);
+            this.btnHome.TabIndex = 45;
+            this.btnHome.Text = "Home";
+            this.btnHome.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
             // CadServicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(608, 552);
+            this.Controls.Add(this.btnHome);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textServiceExecut);
             this.Controls.Add(this.label12);
@@ -370,6 +383,7 @@ namespace FormClientes.Forms
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CadServicos";
             this.Text = "Servicos";
             this.Load += new System.EventHandler(this.Servicos_Load);
@@ -408,5 +422,6 @@ namespace FormClientes.Forms
         private System.Windows.Forms.TextBox textServiceExecut;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnHome;
     }
 }

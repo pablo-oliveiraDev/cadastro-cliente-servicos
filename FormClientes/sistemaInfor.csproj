@@ -367,6 +367,12 @@
   <ItemGroup>
     <None Include="Resources\Atendimento.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Google_Sketch_Up_22517.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

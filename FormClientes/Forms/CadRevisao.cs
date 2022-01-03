@@ -73,5 +73,10 @@ namespace FormClientes.Forms
             FormRevisao frmRev = new FormRevisao();
             frmRev.refreshGrid();
         }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

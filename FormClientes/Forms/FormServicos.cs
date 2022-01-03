@@ -104,8 +104,11 @@ namespace FormClientes.Forms
         private void BtnNovo_Click(object sender, EventArgs e)
         {
             CadServicos frm = new CadServicos();
-            frm.ShowDialog();
+            frm.Show();
+            frm.TopMost = true;
             refreshGrid();
+            FormServicos frmSer = new FormServicos();
+            this.Close();
         }
 
         public void btnAtualizar_click(object sender, EventArgs e)

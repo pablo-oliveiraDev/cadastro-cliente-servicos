@@ -81,6 +81,13 @@ namespace FormClientes.Forms
             this.Dispose();
         }
 
-       
+        public void btnHome_Click(object sender, EventArgs e)
+        {
+            FormServicos frmSer = new FormServicos();
+            frmSer.Dispose();
+            //CadServicos frmCadSer = new CadServicos();
+            //this.Close();
+           
+        }
     }
 }

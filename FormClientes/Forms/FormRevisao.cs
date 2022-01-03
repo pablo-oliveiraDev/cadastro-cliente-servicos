@@ -89,6 +89,9 @@ namespace FormClientes.Forms
         {
             CadRevisao frm = new CadRevisao();
             frm.Show();
+            frm.TopMost = true;
+            FormRevisao frmRev = new FormRevisao();
+            this.Close();
         }
 
         private void FormRevisao_Load(object sender, EventArgs e)
@@ -116,6 +119,11 @@ namespace FormClientes.Forms
             ctrl.SalvarUpSelectRevisao(3, textIdCliente.Text, textidService.Text, textIdRevisao.Text, textDataRevisao.Text);
             ResetText();
             refreshGrid();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

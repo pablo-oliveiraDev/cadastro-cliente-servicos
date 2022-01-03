@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FormClientes.Entities
 {
+    [Table("cliente,servicos", Schema = "public")]
+    
+
     public class Impressao
     {
         public string NomeCliente { get; set; }
@@ -24,8 +28,7 @@ namespace FormClientes.Entities
 
         }
 
-        public Impressao(string nomeCliente, string nomeDoServico, string dataDoServico, string valorTotal,
-            string idCliente, string idServicos, string equipamento, string pecasTrocadas, string valorServico, string desconto,string exeServ)
+        public Impressao(string nomeCliente, string nomeDoServico, string dataDoServico, string valorTotal, string idCliente, string idServicos, string equipamento, string pecasTrocadas, string valorServico, string desconto, string exeServ)
         {
             NomeCliente = nomeCliente;
             NomeDoServico = nomeDoServico;

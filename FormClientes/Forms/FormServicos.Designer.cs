@@ -29,6 +29,7 @@ namespace FormClientes.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormServicos));
             this.tagSolutions = new System.Windows.Forms.Button();
             this.textIdServico = new System.Windows.Forms.TextBox();
             this.textEquip = new System.Windows.Forms.TextBox();
@@ -374,6 +375,7 @@ namespace FormClientes.Forms
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormServicos";
             this.Text = "Servicos";
             this.Load += new System.EventHandler(this.Servicos_Load);

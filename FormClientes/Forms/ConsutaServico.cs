@@ -12,7 +12,8 @@ using Entities;
 using Controles;
 using System.Drawing.Printing;
 using FormClientes.Entities;
-using FormClientes.Forms;
+
+
 
 
 namespace FormClientes.Forms
@@ -21,6 +22,8 @@ namespace FormClientes.Forms
     public partial class ConsultaServico : Form
     {
         Impressao imp = new Impressao();
+         string nomeCliente, nomeDoServico, dataDoServico, valorTotal, idServico, idCliente, equip, exeServ, pecasTroc, valorServ, desconto,defeito;
+        public ConsultaServico consultaServico { get; set; }
         public ConsultaServico()
         {
             InitializeComponent();
@@ -115,7 +118,7 @@ namespace FormClientes.Forms
             MessageBox.Show(comm.CommandText);
 
 
-
+            
 
             string idrow = dataGridViewConsulta.Rows[0].Cells[0].Value.ToString();
             int numberGrid = int.Parse(idrow);
@@ -125,8 +128,11 @@ namespace FormClientes.Forms
             comm.Connection = conn;
             comm.CommandType = CommandType.Text;
             comm.CommandText = "select * from servicos where" + '"' + "id_cliente" + '"' + "=" + numberGrid;
+           
             MessageBox.Show(comm.CommandText);
+
             NpgsqlDataReader dr = comm.ExecuteReader();
+
 
             if (dr.HasRows)
             {
@@ -228,37 +234,40 @@ namespace FormClientes.Forms
         
         public void dataGridViewConsulta2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
 
+          
             int show_row;
 
             
-            string nomeDoServico, dataDoServico, valorTotal, idServico, idCliente, equip, exeServ, pecasTroc, valorServ, desconto, defeito;
+
+           
 
 
-            show_row = e.RowIndex;
-            DataGridViewRow grv = dataGridViewConsulta2.Rows[show_row];
-            idCliente = grv.Cells[0].Value.ToString();
-            idServico = grv.Cells[1].Value.ToString();
-            nomeDoServico = grv.Cells[2].Value.ToString();
-            equip = grv.Cells[3].Value.ToString();
-            pecasTroc = grv.Cells[4].Value.ToString();
-            exeServ = grv.Cells[5].Value.ToString();
-            valorServ = grv.Cells[6].Value.ToString();
-            desconto = grv.Cells[7].Value.ToString();
-            dataDoServico = grv.Cells[8].Value.ToString();
-            valorTotal = grv.Cells[9].Value.ToString();
-            defeito = grv.Cells[10].Value.ToString();
-            string nomeCliente = NomeCli(idCliente);
+                show_row = e.RowIndex;
+                DataGridViewRow grv = dataGridViewConsulta2.Rows[show_row];
+                idCliente = grv.Cells[0].Value.ToString();
+                idServico = grv.Cells[1].Value.ToString();
+                nomeDoServico = grv.Cells[2].Value.ToString();
+                equip = grv.Cells[3].Value.ToString();
+                pecasTroc = grv.Cells[4].Value.ToString();
+                exeServ = grv.Cells[5].Value.ToString();
+                valorServ = grv.Cells[6].Value.ToString();
+                desconto = grv.Cells[7].Value.ToString();
+                dataDoServico = grv.Cells[8].Value.ToString();
+                valorTotal = grv.Cells[9].Value.ToString();
+                defeito = grv.Cells[10].Value.ToString();
+                nomeCliente = NomeCli(idCliente);
 
-            imp = new Impressao(nomeCliente, nomeDoServico, dataDoServico, valorTotal,idCliente,idServico,equip,pecasTroc,valorServ,desconto,exeServ);
+                imp = new Impressao(nomeCliente, nomeDoServico, dataDoServico, valorTotal, idCliente, idServico, equip, pecasTroc, valorServ, desconto, exeServ);
+
+                MessageBox.Show(nomeCliente);
             
              
         }
         
         public void btnImprimir_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show(imp.NomeCliente);
             using (PrintDocument print = new PrintDocument())
             using (PrintPreviewDialog dialog = new PrintPreviewDialog())
             {
@@ -274,23 +283,26 @@ namespace FormClientes.Forms
         }
         public void Print_PrintPage(object sender, PrintPageEventArgs e)
         {
+            
             Graphics g = e.Graphics;
            /* Image image = Image
                 .FromFile(string.Format("{0}{1}",
                 Application.StartupPath,
                 "\\sistemaInformatica\\informaticaEManut\\IMG\\cliente2.png"));*/
-
+           using (Pen pen = new Pen(Color.Black,2))
             using (Font font = new Font("Arial", 16))
             {
                 Font font1 = new Font("Arial-Black", 12);
-
-                g.DrawString($"nome : {imp.NomeCliente}            Data: {imp.DataDoServico}           O.S: {imp.IdServicos}", font, Brushes.Black, 40, 40);
-                g.DrawString($"Serviço: {imp.NomeDoServico}", font, Brushes.Black, 40, 65);
-                g.DrawString($"Descrição do serviço Equipamento: {imp.Equipamento} -", font1, Brushes.Black, 40, 100);
-                g.DrawString($" Peças trocadas: {imp.PecasTrocadas}", font1, Brushes.Black, 60, 125);
-                g.DrawString($"Serviços prestados: {imp.ExeServ}", font1, Brushes.Black, 60, 165);
-                
-                g.DrawString($"Valor do Serviço: {imp.ValorServico}  Deconto: {imp.Desconto}%   valor Total: {imp.ValorTotal}", font, Brushes.Black, 40, 215);
+                g.DrawRectangle(pen, 35, 25, 750, 400);
+                g.DrawString($"nome : {imp.NomeCliente}            Data: {imp.DataDoServico}           O.S: {imp.IdServicos}", font, Brushes.Black, 50, 40);
+                g.DrawLine(pen,785, 62,34,62);
+                g.DrawLine(pen, 785, 100, 34, 100);
+                g.DrawString($"Equipamento: {imp.Equipamento} ", font1, Brushes.Black, 50, 70);
+                g.DrawLine(pen, 785, 125, 34, 125);
+                g.DrawString($"Serviço: {imp.NomeDoServico}", font1, Brushes.Black, 50, 100);
+                g.DrawString($" Peças trocadas: {imp.PecasTrocadas}", font1, Brushes.Black, 50, 125);
+                g.DrawString($"Serviços prestados: {imp.ExeServ}", font1, Brushes.Black, 50, 165);
+                g.DrawString($"Valor do Serviço: {imp.ValorServico}      Desconto: {imp.Desconto}%          valor Total: {imp.ValorTotal}", font, Brushes.Black, 50, 215);
                 
             }
         }

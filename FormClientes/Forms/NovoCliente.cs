@@ -48,5 +48,10 @@ namespace FormClientes.Forms
             frm.refreshGrid();
             this.Dispose();
         }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

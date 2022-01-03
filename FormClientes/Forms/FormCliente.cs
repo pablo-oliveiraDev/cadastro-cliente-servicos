@@ -59,12 +59,7 @@ namespace FormClientes.Forms
             conn.Close();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-
-
-        }
+      
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -107,9 +102,10 @@ namespace FormClientes.Forms
 
 
             NovoCliente cliform = new NovoCliente();
-
-
-            cliform.ShowDialog();
+            cliform.Show();
+            cliform.TopMost = true;
+            FormCliente frmCli = new FormCliente();
+            this.Close();
 
 
         }
@@ -165,6 +161,19 @@ namespace FormClientes.Forms
         {
             ConsultaServico frm = new ConsultaServico();
             frm.Show();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            
+            FormCliente frmCli = new FormCliente();
+            this.Close();
+           
+        }
+
+        private void FormCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -40,6 +40,7 @@ namespace FormClientes.Forms
             this.cboIdCliente = new System.Windows.Forms.ComboBox();
             this.cboIdServicos = new System.Windows.Forms.ComboBox();
             this.tagSolutions = new System.Windows.Forms.Button();
+            this.btnHome = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textDataRevisao
@@ -156,12 +157,29 @@ namespace FormClientes.Forms
             this.tagSolutions.Text = "Oliveira New Solutions";
             this.tagSolutions.UseVisualStyleBackColor = false;
             // 
+            // btnHome
+            // 
+            this.btnHome.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.Image = global::FormClientes.Properties.Resources.home;
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnHome.Location = new System.Drawing.Point(267, 159);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(90, 90);
+            this.btnHome.TabIndex = 23;
+            this.btnHome.Text = "Home";
+            this.btnHome.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
             // CadRevisao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(357, 450);
+            this.Controls.Add(this.btnHome);
             this.Controls.Add(this.tagSolutions);
             this.Controls.Add(this.cboIdServicos);
             this.Controls.Add(this.cboIdCliente);
@@ -193,5 +211,6 @@ namespace FormClientes.Forms
         private System.Windows.Forms.ComboBox cboIdCliente;
         private System.Windows.Forms.ComboBox cboIdServicos;
         private System.Windows.Forms.Button tagSolutions;
+        private System.Windows.Forms.Button btnHome;
     }
 }
